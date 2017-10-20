@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                     print("You have successfully logged in")
                     
                     //Go to the HomeViewController if the login is sucessful
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Logout")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "tab")
                     self.present(vc!, animated: true, completion: nil)
                     
                 } else {
