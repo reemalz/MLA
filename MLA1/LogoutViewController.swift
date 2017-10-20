@@ -23,9 +23,7 @@ class LogoutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
-    @IBAction func LogoutAction(_ sender: Any) {
-    
+    @IBAction func logoutAction(_ sender: Any) {
         if Auth.auth().currentUser != nil {
             do {
                 try Auth.auth().signOut()
@@ -35,7 +33,11 @@ class LogoutViewController: UIViewController {
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
+        
         }
+    }
+    
+    
     }
     
     /*
@@ -48,4 +50,4 @@ class LogoutViewController: UIViewController {
     }
     */
 
-}
+

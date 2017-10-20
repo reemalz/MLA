@@ -27,15 +27,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func createAccountAction(_ sender: Any) {
-        /*
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            else if let user = user {
-                print(user)
-            }
-        }*/
+     
         if emailTextField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             
