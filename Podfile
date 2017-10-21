@@ -9,6 +9,5 @@ target 'MLA1' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Database’
 	pod 'Firebase/Auth'
-    pod 'Alamofire', '~> 4.5'
-    pod 'AlamofireImage', '~> 3.3'
+    pod 'AFNetworking', '~> 3.0'
 end
