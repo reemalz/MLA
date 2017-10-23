@@ -118,9 +118,9 @@ LoadMystery()
         else  if collectionView == self.Documentray{
             let cell:CollectionViewCell4=collectionView.dequeueReusableCell(withReuseIdentifier: "cell4", for: indexPath) as! CollectionViewCell4
             let movie=self.DocumentrayResult[indexPath.row]
-            let movie_P=movie["poster_path"] as! String
-            let url=URL(string:imageURL+movie_P)
-            cell.pImage.setImageWith(url!)
+            if let movie_P=movie["poster_path"]as?String{
+                let url=URL(string:imageURL+movie_P)
+                cell.pImage.setImageWith(url!)}
             let tag=movie["id"] as! Int
             cell.pImage.tag=tag
             return cell}
