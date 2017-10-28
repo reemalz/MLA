@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HWq-x3-Qbp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CQq-vS-IYz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQR-qn-NhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="477.60000000000002" y="2019.9400299850076"/>
+            <point key="canvasLocation" x="-223" y="1772"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Tch-Zm-Mfq">
@@ -75,7 +75,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xH-z6-MK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="3175"/>
+            <point key="canvasLocation" x="-3553" y="1772"/>
         </scene>
         <!--Friends-->
         <scene sceneID="9iG-i4-frM">
@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ou8-p1-gek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1218" y="2021"/>
+            <point key="canvasLocation" x="746" y="1772"/>
         </scene>
         <!--Top movies-->
         <scene sceneID="qIE-sE-pih">
@@ -120,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rk3-t2-TBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935.2" y="2019.9400299850076"/>
+            <point key="canvasLocation" x="1919" y="1772"/>
         </scene>
         <!--Log in-->
         <scene sceneID="BXf-dR-mny">
@@ -219,7 +219,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLa-BZ-Xjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="y2g-V9-QY5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="909.89505247376314"/>
+            <point key="canvasLocation" x="252" y="910"/>
         </scene>
         <!--Register -->
         <scene sceneID="Bvu-hf-jSV">
@@ -305,9 +305,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PkQ-aO-5EP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162.40000000000001" y="909.89505247376314"/>
+            <point key="canvasLocation" x="1606" y="910"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="WgG-od-fhw">
             <objects>
                 <viewController id="2Ex-90-Qkx" sceneMemberID="viewController">
@@ -346,10 +346,12 @@
                         <color key="backgroundColor" red="0.078790493309497833" green="0.062608294188976288" blue="0.066617421805858612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="XYs-nK-G0R"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Ubl-At-1ay"/>
+                    <navigationItem key="navigationItem" id="ONW-Zw-OcL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpo-6j-xiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2689" y="1773"/>
+            <point key="canvasLocation" x="-1703" y="2787"/>
         </scene>
         <!--Main Page Controller-->
         <scene sceneID="Iq9-L9-Otp">
@@ -401,6 +403,7 @@
                                                         <color key="backgroundColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="pImage" destination="EaJ-0c-oXg" id="hyC-6l-KCs"/>
+                                                            <segue destination="2Ex-90-Qkx" kind="show" id="ENA-NI-vTb"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -446,6 +449,7 @@
                                                         <color key="backgroundColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="pImage" destination="pJP-9B-V10" id="7cW-0x-3Nl"/>
+                                                            <segue destination="2Ex-90-Qkx" kind="show" id="Ron-0i-I62"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -477,6 +481,7 @@
                                                         <color key="backgroundColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="pImage" destination="921-7C-NA6" id="SBv-r9-Mfh"/>
+                                                            <segue destination="2Ex-90-Qkx" kind="show" id="tqt-QI-qhA"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -522,6 +527,7 @@
                                                         <color key="backgroundColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="pImage" destination="rHF-D8-snY" id="EUH-Et-pg6"/>
+                                                            <segue destination="2Ex-90-Qkx" kind="show" id="dgg-km-rgc"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -568,6 +574,7 @@
                                                         <color key="backgroundColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="pImage" destination="E2x-Pp-Smp" id="U9l-q8-leh"/>
+                                                            <segue destination="2Ex-90-Qkx" kind="show" id="sKR-6H-ZP0"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -599,6 +606,7 @@
                                                         <color key="backgroundColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="pImage" destination="rRC-rG-YhJ" id="IuB-hE-GZc"/>
+                                                            <segue destination="2Ex-90-Qkx" kind="show" id="3RJ-2G-cbd"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -630,7 +638,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAW-zh-tBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1812.8" y="2022.1889055472266"/>
+            <point key="canvasLocation" x="-1672" y="1772"/>
         </scene>
         <!--Sittengs-->
         <scene sceneID="5QW-C9-Lc1">
@@ -774,7 +782,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kcs-4K-V34" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MLZ-5G-B1T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="2651.4242878560722"/>
+            <point key="canvasLocation" x="2996" y="1772"/>
         </scene>
     </scenes>
     <resources>
@@ -785,5 +793,9 @@
         <image name="icons8-Save Search Filled 7.22.25 PM" width="30" height="30"/>
         <image name="icons8-Settings Filled" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="evA-mu-D82"/>
+        <segue reference="ENA-NI-vTb"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.078790493309497833" green="0.062608294188976288" blue="0.066617421805858612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
