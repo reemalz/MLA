@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8BC1BF1FA8775D004B696D /* MoviePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */; };
+		0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */; };
 		6105BE021F93C0D000F6EDC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */; };
 		61CA198B1F9151B8007C1509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA198A1F9151B8007C1509 /* AppDelegate.swift */; };
 		61CA198D1F9151B8007C1509 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA198C1F9151B8007C1509 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageViewController.swift; sourceTree = "<group>"; };
+		0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		297F3118F12E4CF987D49C68 /* Pods-MLA1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLA1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLA1/Pods-MLA1.debug.xcconfig"; sourceTree = "<group>"; };
 		6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61CA19871F9151B8007C1509 /* MLA1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLA1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +106,9 @@
 			children = (
 				61CA198A1F9151B8007C1509 /* AppDelegate.swift */,
 				61CA198C1F9151B8007C1509 /* ViewController.swift */,
+				0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */,
 				61CA198E1F9151B8007C1509 /* Main.storyboard */,
+				0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */,
 				E3FE4CFB1F9BF03600B5F7B9 /* MainPageViewController.swift */,
 				87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */,
 				87981A671F97D9BC0002D94A /* LoginViewController.swift */,
@@ -259,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8BC1BF1FA8775D004B696D /* MoviePageViewController.swift in Sources */,
 				87F6A9F11F97A58B00FA6B60 /* RegisterViewController.swift in Sources */,
 				E3FE4D041F9BF0B000B5F7B9 /* CollectionViewCell4.swift in Sources */,
 				61CA198D1F9151B8007C1509 /* ViewController.swift in Sources */,
+				0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */,
 				61CA198B1F9151B8007C1509 /* AppDelegate.swift in Sources */,
 				E3FE4D061F9BF0C500B5F7B9 /* CollectionViewCell5.swift in Sources */,
 				E3FE4CFE1F9BF07E00B5F7B9 /* CollectionViewCell.swift in Sources */,
