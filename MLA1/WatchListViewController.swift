@@ -8,28 +8,36 @@
 
 import UIKit
 
-class WatchListViewController: UIViewController {
-
+class WatchListViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier:"cell")
+        tableView.delegate = self
+        tableView.dataSource = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    
+    
+   // var WatchList = [String]()
+   var WatchList = ["a","b","c"]
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (WatchList.count)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath)
+            /*UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        cell.textLabel?.text = WatchList[indexPath.row]*/
+        
+        cell.backgroundColor = UIColor.black
+        return(cell)
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

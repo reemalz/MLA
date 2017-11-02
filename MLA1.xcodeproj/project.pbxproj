@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F250A761FAAEE3A0032739E /* TableViewCellWatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F250A751FAAEE3A0032739E /* TableViewCellWatchList.swift */; };
 		0F8BC1BF1FA8775D004B696D /* MoviePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */; };
 		0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */; };
 		6105BE021F93C0D000F6EDC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F250A751FAAEE3A0032739E /* TableViewCellWatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWatchList.swift; sourceTree = "<group>"; };
 		0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageViewController.swift; sourceTree = "<group>"; };
 		0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		297F3118F12E4CF987D49C68 /* Pods-MLA1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLA1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLA1/Pods-MLA1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				61CA198C1F9151B8007C1509 /* ViewController.swift */,
 				0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */,
 				61CA198E1F9151B8007C1509 /* Main.storyboard */,
+				0F250A751FAAEE3A0032739E /* TableViewCellWatchList.swift */,
 				0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */,
 				E3FE4CFB1F9BF03600B5F7B9 /* MainPageViewController.swift */,
 				87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */,
@@ -269,6 +272,7 @@
 				87F6A9F11F97A58B00FA6B60 /* RegisterViewController.swift in Sources */,
 				E3FE4D041F9BF0B000B5F7B9 /* CollectionViewCell4.swift in Sources */,
 				61CA198D1F9151B8007C1509 /* ViewController.swift in Sources */,
+				0F250A761FAAEE3A0032739E /* TableViewCellWatchList.swift in Sources */,
 				0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */,
 				61CA198B1F9151B8007C1509 /* AppDelegate.swift in Sources */,
 				E3FE4D061F9BF0C500B5F7B9 /* CollectionViewCell5.swift in Sources */,
@@ -352,7 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -403,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -417,7 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AM87UZ58H7;
+				DEVELOPMENT_TEAM = 38XNRUWZF7;
 				INFOPLIST_FILE = MLA1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -434,7 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AM87UZ58H7;
+				DEVELOPMENT_TEAM = 38XNRUWZF7;
 				INFOPLIST_FILE = MLA1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

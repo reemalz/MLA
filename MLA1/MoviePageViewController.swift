@@ -26,7 +26,7 @@ class MoviePageViewController: UIViewController {
     
     @IBAction func RateMovie(_ sender: UIButton) {
         var rate = NSInteger()
-        rate = sender.tag
+         rate = sender.tag
         
         for star in RatingStars {
             if star.tag<=rate{
