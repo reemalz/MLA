@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="CQq-vS-IYz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="syM-3F-8f0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -397,7 +397,7 @@
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="reply" id="Xmx-k7-L43">
                                             <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="vaa-mr-Bcy" kind="modal" id="rzj-UF-K54"/>
+                                                <segue destination="CQq-vS-IYz" kind="modal" id="agn-Ae-flE"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -876,26 +876,26 @@
                                 <color key="sectionIndexBackgroundColor" red="0.2132713497" green="0.201272279" blue="0.20421418550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.078790493310000001" green="0.062608294189999997" blue="0.066617421809999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="200" id="wub-DP-f3V" customClass="TableViewCellWatchList" customModule="MLA1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="189" id="wub-DP-f3V" customClass="TableViewCellWatchList" customModule="MLA1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="189"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wub-DP-f3V" id="ydn-gx-Nt1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="188.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OhC-lK-WaT">
+                                                    <rect key="frame" x="15" y="23" width="108" height="126"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.90591517857142856" green="0.31794410940000001" blue="0.43250817060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.63921568630000003" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tt-7l-Mpm">
-                                                    <rect key="frame" x="109" y="37" width="233" height="30"/>
+                                                    <rect key="frame" x="107" y="71" width="233" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Movie Name">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OhC-lK-WaT">
-                                                    <rect key="frame" x="15" y="21" width="118" height="156"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.90591517857142856" green="0.31794410940000001" blue="0.43250817060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="tintColor" red="0.062745098040000002" green="0.63921568630000003" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.067239589989185333" green="0.049126669620358845" blue="0.055062014852347893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
@@ -918,7 +918,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1a3-Jy-aU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220.625" y="1943.1933333333332"/>
+            <point key="canvasLocation" x="-221.5" y="1942.5"/>
         </scene>
     </scenes>
     <resources>
@@ -931,7 +931,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9zZ-F0-TZv"/>
-        <segue reference="rzj-UF-K54"/>
         <segue reference="sKR-6H-ZP0"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.078790493309497833" green="0.062608294188976288" blue="0.066617421805858612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

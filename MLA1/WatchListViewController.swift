@@ -1,10 +1,4 @@
-//
-//  WatchListViewController.swift
-//  MLA1
-//
-//  Created by user2 on ١١ صفر، ١٤٣٩ هـ.
-//  Copyright © ١٤٣٩ هـ njoool . All rights reserved.
-//
+
 
 import UIKit
 
@@ -37,7 +31,12 @@ class WatchListViewController: UIViewController , UITableViewDataSource , UITabl
         return(cell)
     }
     
-
+      func tableView(_ tableView: UITableView,commit editingStyle:UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
+     if editingStyle==UITableViewCellEditingStyle.delete{
+     WatchList.remove(at: indexPath.row)
+     tableView.reloadData()
+     }
+     }
 
 
 }
