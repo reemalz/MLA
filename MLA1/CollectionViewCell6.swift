@@ -11,4 +11,6 @@ import UIKit
 class CollectionViewCell6: UICollectionViewCell {
     
     @IBOutlet weak var pImage: UIImageView!
+    var id=Int()
+
 }

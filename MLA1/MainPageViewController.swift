@@ -94,7 +94,7 @@ LoadMystery()
              let url=URL(string:imageURL+movie_P)
             cell.pImage.setImageWith(url!)
              let tag=movie["id"] as! Int
-                cell.pImage.tag=tag
+                cell.id=tag
             return cell}
         else if  collectionView == self.Drama{
             let cell:CollectionViewCell2=collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! CollectionViewCell2
@@ -103,7 +103,7 @@ LoadMystery()
              let url=URL(string:imageURL+movie_P)
              cell.pImage.setImageWith(url!)
              let tag=movie["id"] as! Int
-                cell.pImage.tag=tag
+                cell.id=tag
             return cell }
         else if collectionView == self.Horror{
             let cell:CollectionViewCell3=collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! CollectionViewCell3
@@ -112,7 +112,7 @@ LoadMystery()
             let url=URL(string:imageURL+movie_P)
             cell.pImage.setImageWith(url!)
             let tag=movie["id"] as! Int
-            cell.pImage.tag=tag
+            cell.id=tag
             return cell}
             
         else  if collectionView == self.Documentray{
@@ -122,7 +122,7 @@ LoadMystery()
                 let url=URL(string:imageURL+movie_P)
                 cell.pImage.setImageWith(url!)}
             let tag=movie["id"] as! Int
-            cell.pImage.tag=tag
+            cell.id=tag
             return cell}
             
         else if collectionView == self.Adventure{
@@ -132,7 +132,7 @@ LoadMystery()
             let url=URL(string:imageURL+movie_P)
             cell.pImage.setImageWith(url!)
             let tag=movie["id"] as! Int
-            cell.pImage.tag=tag
+            cell.id=tag
             return cell}
         else  {
             let cell:CollectionViewCell6=collectionView.dequeueReusableCell(withReuseIdentifier: "cell6", for: indexPath) as! CollectionViewCell6
@@ -141,10 +141,26 @@ LoadMystery()
             let url=URL(string:imageURL+movie_P)
             cell.pImage.setImageWith(url!)
             let tag=movie["id"] as! Int
-            cell.pImage.tag=tag
+            cell.id=tag
             return cell}
         
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView==Action{performSegue(withIdentifier:"action" , sender:(Any).self)}
+        else if collectionView == Drama {performSegue(withIdentifier:"drama" , sender:(Any).self)}
+        else if collectionView == Horror{performSegue(withIdentifier:"horror" , sender:(Any).self)}
+        else if collectionView == Documentray {performSegue(withIdentifier:"documentray" , sender:(Any).self)}
+        else if collectionView == Adventure {performSegue(withIdentifier:"adventure" , sender:(Any).self)}
+        else{performSegue(withIdentifier:"mystery" , sender:(Any).self)}
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let movie=segue.destination as! MoviePageViewController
+        if  let cell = sender as? CollectionViewCell{movie.id=cell.id}
+        else if let cell = sender as? CollectionViewCell2{movie.id=cell.id}
+        else if let cell = sender as? CollectionViewCell3{movie.id=cell.id}
+        else if let cell = sender as? CollectionViewCell4{movie.id=cell.id}
+        else if let cell = sender as? CollectionViewCell5{movie.id=cell.id}
+        else if let cell = sender as? CollectionViewCell6{movie.id=cell.id}}
     
     func LoadAction() {
         let task = URLSession.shared.dataTask(with: action_url!){ data,respons,error in
@@ -250,12 +266,7 @@ LoadMystery()
         task.resume()}
     
     
-   /* func setAction(data:[NSDictionary]){self.ActionResult=data}
-   func setDrama (data:[NSDictionary]){self.DramaResult=data}
-   func setDocumentray (data:NSArray){self.DocumentrayResult=data}
-    func setAdventure (data:NSArray){self.AdventureResult=data}
-   func setMystery (data:NSArray){self.MysteryResult=data}
-    func setHorror (data:NSArray){self.HorrorResult=data}*/
+
     
     
 }
