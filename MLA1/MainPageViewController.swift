@@ -145,6 +145,7 @@ LoadMystery()
             return cell}
         
     }
+    //////////////// after the posters are clicked ///////////////
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView==Action{performSegue(withIdentifier:"action" , sender:(Any).self)}
         else if collectionView == Drama {performSegue(withIdentifier:"drama" , sender:(Any).self)}
@@ -153,6 +154,7 @@ LoadMystery()
         else if collectionView == Adventure {performSegue(withIdentifier:"adventure" , sender:(Any).self)}
         else{performSegue(withIdentifier:"mystery" , sender:(Any).self)}
     }
+    //////////////// preparing to send  ID/////////////////
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let movie=segue.destination as! MoviePageViewController
         if  let cell = sender as? CollectionViewCell{movie.id=cell.id}

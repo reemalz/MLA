@@ -12,16 +12,17 @@ import FirebaseDatabase
 
 class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
-   
     @IBOutlet var RatingStars: [UIButton]!
     var id=Int();//movie ID
     var Curl2=URL(string:"")
     var Movie_Cast:[NSDictionary] = [];
     var title1:String?
-    @IBOutlet weak var Cast_result: UICollectionView!
     @IBOutlet weak var mName: UILabel!
     let image:String="https://image.tmdb.org/t/p/w500"
     @IBOutlet weak var Poster: UIImageView!
+    @IBOutlet weak var Plot: UILabel!
+    @IBOutlet weak var Cast_result: UICollectionView!
+    
     
     
     @IBAction func addToWatchlist(_ sender: UIButton) {
@@ -59,11 +60,12 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
                         let purl=URL(string:self.image+pPath)
                         DispatchQueue.main.async {self.Poster.setImageWith(purl!)}
                         self.title1=myJson["original_title"] as? String
+                        DispatchQueue.main.async { self.Plot.text=myJson["overview"] as? String}
                         }
                     catch{}}}}
                task.resume()
         /////////////////// Loading the cast data ///////////////////////////
-         Curl2 = URL(string:"https://api.themoviedb.org/3/movie/\(id)/credits")
+         Curl2 = URL(string:"https://api.themoviedb.org/3/movie/\(id)/credits?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")
             let task2 = URLSession.shared.dataTask(with:Curl2!){ data,respons,error in
                 if error != nil
                 {print ("ERROR")}
@@ -72,7 +74,7 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
                         do
                         { let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
                             DispatchQueue.main.async{
-                                
+                                print(myJson)
                                 if let mCast=myJson["cast"] as? [NSDictionary]
                                 {self.Movie_Cast=mCast
                                     print(mCast)
@@ -83,17 +85,19 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
         else {print("error!!")}
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return Movie_Cast.count}
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("movie count \(Movie_Cast.count)")
+        return Movie_Cast.count}
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CollectionViewCell7=collectionView.dequeueReusableCell(withReuseIdentifier: "cell7", for: indexPath) as! CollectionViewCell7
         let actor=self.Movie_Cast[indexPath.row]
         let actor_name=actor["name"] as! String
         cell.Cast_name.text=actor_name
-        let actor_img=actor["profile_path"] as! String
+        if  let actor_img=actor["profile_path"] as? String{
         let url=URL(string:image+actor_img)
         cell.pImage.setImageWith(url!)
-        print(actor_name)
+        }
         return cell
     }
     

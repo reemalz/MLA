@@ -9,6 +9,7 @@
 import UIKit
 
 class CollectionViewCell7: UICollectionViewCell {
+    
     @IBOutlet weak var pImage: UIImageView!
     @IBOutlet weak var Cast_name: UILabel!
 }
