@@ -19,6 +19,7 @@
 		87981A681F97D9BC0002D94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87981A671F97D9BC0002D94A /* LoginViewController.swift */; };
 		87981A6A1F97ECC50002D94A /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87981A691F97ECC50002D94A /* LogoutViewController.swift */; };
 		87F6A9F11F97A58B00FA6B60 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */; };
+		E39FD9DB1FAFC8C30095AD57 /* CollectionViewCell7.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FD9DA1FAFC8C30095AD57 /* CollectionViewCell7.swift */; };
 		E3FE4CFC1F9BF03600B5F7B9 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FE4CFB1F9BF03600B5F7B9 /* MainPageViewController.swift */; };
 		E3FE4CFE1F9BF07E00B5F7B9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FE4CFD1F9BF07E00B5F7B9 /* CollectionViewCell.swift */; };
 		E3FE4D001F9BF09500B5F7B9 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FE4CFF1F9BF09500B5F7B9 /* CollectionViewCell2.swift */; };
@@ -47,6 +48,7 @@
 		87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8B34BCD5A24448B3756994A0 /* Pods-MLA1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLA1.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLA1/Pods-MLA1.release.xcconfig"; sourceTree = "<group>"; };
 		984BB218D37E4B2A1F08976C /* Pods_MLA1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLA1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E39FD9DA1FAFC8C30095AD57 /* CollectionViewCell7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell7.swift; sourceTree = "<group>"; };
 		E3FE4CFB1F9BF03600B5F7B9 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		E3FE4CFD1F9BF07E00B5F7B9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E3FE4CFF1F9BF09500B5F7B9 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				E3FE4D031F9BF0B000B5F7B9 /* CollectionViewCell4.swift */,
 				E3FE4D051F9BF0C500B5F7B9 /* CollectionViewCell5.swift */,
 				E3FE4D071F9BF0D600B5F7B9 /* CollectionViewCell6.swift */,
+				E39FD9DA1FAFC8C30095AD57 /* CollectionViewCell7.swift */,
 				6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */,
 				61CA19931F9151B9007C1509 /* LaunchScreen.storyboard */,
 				61CA19961F9151B9007C1509 /* Info.plist */,
@@ -270,6 +273,7 @@
 			files = (
 				0F8BC1BF1FA8775D004B696D /* MoviePageViewController.swift in Sources */,
 				87F6A9F11F97A58B00FA6B60 /* RegisterViewController.swift in Sources */,
+				E39FD9DB1FAFC8C30095AD57 /* CollectionViewCell7.swift in Sources */,
 				E3FE4D041F9BF0B000B5F7B9 /* CollectionViewCell4.swift in Sources */,
 				61CA198D1F9151B8007C1509 /* ViewController.swift in Sources */,
 				0F250A761FAAEE3A0032739E /* TableViewCellWatchList.swift in Sources */,
