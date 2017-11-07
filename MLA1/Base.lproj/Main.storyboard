@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vaa-mr-Bcy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="CQq-vS-IYz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -299,6 +299,7 @@
                                     <color key="titleShadowColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="OpenStatus:" destination="2Ex-90-Qkx" eventType="touchUpInside" id="pBJ-pb-Pwf"/>
                                     <action selector="addToWatchlist:" destination="2Ex-90-Qkx" eventType="touchUpInside" id="U9d-10-bfv"/>
                                 </connections>
                             </button>
@@ -456,9 +457,11 @@
                         <color key="backgroundColor" red="0.078790493309497833" green="0.062608294188976288" blue="0.066617421805858612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="AddB" destination="hix-sq-TK9" id="qeV-8R-iL7"/>
                         <outlet property="Cast_result" destination="P7i-XO-YnK" id="lFA-3i-joh"/>
                         <outlet property="Plot" destination="iQq-lG-aiU" id="jFY-Nr-ocN"/>
                         <outlet property="Poster" destination="u7K-KE-cUv" id="mkp-AR-wAF"/>
+                        <outlet property="StatusView" destination="Ah9-mU-uQJ" id="Oup-qg-C3R"/>
                         <outlet property="mName" destination="Vtx-2e-FSE" id="NJr-qw-x2Q"/>
                         <outletCollection property="RatingStars" destination="fKD-RL-NNM" collectionClass="NSMutableArray" id="u1e-Px-mpF"/>
                         <outletCollection property="RatingStars" destination="ByK-dO-F4q" collectionClass="NSMutableArray" id="1wP-W3-ZZz"/>
@@ -468,8 +471,39 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpo-6j-xiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Ah9-mU-uQJ" userLabel="StatusView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiG-1W-Lz6">
+                            <rect key="frame" x="67" y="340" width="240" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Completed">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="Complete:" destination="2Ex-90-Qkx" eventType="touchUpInside" id="eFy-dT-URR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWf-nw-1r3">
+                            <rect key="frame" x="67" y="283" width="240" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Plan to watch">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="Plan:" destination="2Ex-90-Qkx" eventType="touchUpInside" id="cLf-Tg-TEt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.5371628853" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="-1044.5" y="3189.5"/>
+            <point key="canvasLocation" x="-1741" y="3095"/>
         </scene>
         <!--Main Page Controller-->
         <scene sceneID="Iq9-L9-Otp">
@@ -984,7 +1018,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="evA-mu-D82"/>
-        <segue reference="3RJ-2G-cbd"/>
+        <segue reference="ENA-NI-vTb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.078790493309497833" green="0.062608294188976288" blue="0.066617421805858612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
