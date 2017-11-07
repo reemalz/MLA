@@ -110,5 +110,55 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
             if star.tag<=rate{
                 star .setTitle("★", for: UIControlState.normal )}
             else{star .setTitle("☆", for: UIControlState.normal )}} }
+
+
+    @IBOutlet var StatusView: UIView!
+    @IBOutlet weak var AddB: UIButton!
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        StatusView.removeFromSuperview()
+    }
+    
+    func open() {
+        self.view.addSubview(StatusView)
+        StatusView.center = self.view.center
+    }
+    /*
+    
+
+
+    
+    @IBAction func Plan(_ sender: Any) {
+    }
+    
+
+    @IBAction func Complete(_ sender: Any) {
+        self.AddB.backgroundColor = UIColor.lightGray
+        AddB.setTitle("Complete", for: .normal)
+        StatusView.removeFromSuperview()
+    }
+    */
+    
+
+    @IBAction func Plan(_ sender: Any) {
+        self.AddB.backgroundColor = UIColor.lightGray
+        AddB.setTitle("Plan", for: .normal)
+        StatusView.removeFromSuperview()}
+    
+    @IBAction func Complete(_ sender: Any) {
+        self.AddB.backgroundColor = UIColor.lightGray
+        AddB.setTitle("Complete", for: .normal)
+        StatusView.removeFromSuperview()
+    }
+    
+    @IBAction func OpenStatus(_ sender: Any) {
+        open()}
+    
+
+
+
+
+
+
 }
 
