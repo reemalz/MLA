@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class RegisterViewController: UIViewController,UITextFieldDelegate {
 
@@ -35,7 +36,11 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func createAccountAction(_ sender: Any) {
-     
+        
+        // variable to reference our database from firebase
+        let ref : DatabaseReference!
+        ref = Database.database().reference()
+        
         if emailTextField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             
@@ -49,6 +54,12 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
                 
                 if error == nil {
                     print("You have successfully signed up")
+                    
+                    
+                    // add user to the users tree
+                    //and set value of email property to the value taken from textfield
+                    //later on we will add more properties... e.g. username.. profile pic.. bio..
+                    ref.child("Users").child(user!.uid).setValue(["Email": self.emailTextField.text!])
                     
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
                     self.present(vc!, animated: true, completion: nil)

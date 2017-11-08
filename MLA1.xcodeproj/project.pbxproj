@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F250A761FAAEE3A0032739E /* TableViewCellWatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F250A751FAAEE3A0032739E /* TableViewCellWatchList.swift */; };
 		0F8BC1BF1FA8775D004B696D /* MoviePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */; };
 		0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */; };
 		6105BE021F93C0D000F6EDC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */; };
@@ -18,6 +17,7 @@
 		61E83F2B1F9271470048D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61E83F2A1F9271470048D4E1 /* Assets.xcassets */; };
 		87981A681F97D9BC0002D94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87981A671F97D9BC0002D94A /* LoginViewController.swift */; };
 		87981A6A1F97ECC50002D94A /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87981A691F97ECC50002D94A /* LogoutViewController.swift */; };
+		87ECD9341FB1D9F40094B957 /* TableViewCellWatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ECD9331FB1D9F40094B957 /* TableViewCellWatchList.swift */; };
 		87F6A9F11F97A58B00FA6B60 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */; };
 		E39FD9DB1FAFC8C30095AD57 /* CollectionViewCell7.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FD9DA1FAFC8C30095AD57 /* CollectionViewCell7.swift */; };
 		E3FE4CFC1F9BF03600B5F7B9 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FE4CFB1F9BF03600B5F7B9 /* MainPageViewController.swift */; };
@@ -31,7 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F250A751FAAEE3A0032739E /* TableViewCellWatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWatchList.swift; sourceTree = "<group>"; };
 		0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageViewController.swift; sourceTree = "<group>"; };
 		0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		297F3118F12E4CF987D49C68 /* Pods-MLA1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLA1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLA1/Pods-MLA1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		61E83F2A1F9271470048D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87981A671F97D9BC0002D94A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		87981A691F97ECC50002D94A /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		87ECD9331FB1D9F40094B957 /* TableViewCellWatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWatchList.swift; sourceTree = "<group>"; };
 		87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8B34BCD5A24448B3756994A0 /* Pods-MLA1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLA1.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLA1/Pods-MLA1.release.xcconfig"; sourceTree = "<group>"; };
 		984BB218D37E4B2A1F08976C /* Pods_MLA1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLA1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,11 +108,11 @@
 		61CA19891F9151B8007C1509 /* MLA1 */ = {
 			isa = PBXGroup;
 			children = (
+				87ECD9331FB1D9F40094B957 /* TableViewCellWatchList.swift */,
 				61CA198A1F9151B8007C1509 /* AppDelegate.swift */,
 				61CA198C1F9151B8007C1509 /* ViewController.swift */,
 				0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */,
 				61CA198E1F9151B8007C1509 /* Main.storyboard */,
-				0F250A751FAAEE3A0032739E /* TableViewCellWatchList.swift */,
 				0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */,
 				E3FE4CFB1F9BF03600B5F7B9 /* MainPageViewController.swift */,
 				87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */,
@@ -169,6 +169,11 @@
 					61CA19861F9151B8007C1509 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -276,7 +281,6 @@
 				E39FD9DB1FAFC8C30095AD57 /* CollectionViewCell7.swift in Sources */,
 				E3FE4D041F9BF0B000B5F7B9 /* CollectionViewCell4.swift in Sources */,
 				61CA198D1F9151B8007C1509 /* ViewController.swift in Sources */,
-				0F250A761FAAEE3A0032739E /* TableViewCellWatchList.swift in Sources */,
 				0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */,
 				61CA198B1F9151B8007C1509 /* AppDelegate.swift in Sources */,
 				E3FE4D061F9BF0C500B5F7B9 /* CollectionViewCell5.swift in Sources */,
@@ -285,6 +289,7 @@
 				87981A6A1F97ECC50002D94A /* LogoutViewController.swift in Sources */,
 				E3FE4D001F9BF09500B5F7B9 /* CollectionViewCell2.swift in Sources */,
 				E3FE4D081F9BF0D600B5F7B9 /* CollectionViewCell6.swift in Sources */,
+				87ECD9341FB1D9F40094B957 /* TableViewCellWatchList.swift in Sources */,
 				E3FE4CFC1F9BF03600B5F7B9 /* MainPageViewController.swift in Sources */,
 				87981A681F97D9BC0002D94A /* LoginViewController.swift in Sources */,
 			);

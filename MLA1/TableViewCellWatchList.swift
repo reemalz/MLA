@@ -2,23 +2,20 @@
 //  TableViewCellWatchList.swift
 //  MLA1
 //
-//  Created by user2 on ١٣ صفر، ١٤٣٩ هـ.
-//  Copyright © ١٤٣٩ هـ njoool . All rights reserved.
+//  Created by Reem Al-Zahrani on 07/11/2017.
+//  Copyright © 2017 njoool . All rights reserved.
 //
 
 import UIKit
 
 class TableViewCellWatchList: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var Title: UILabel!
+    @IBOutlet weak var Status: UILabel!
+    
+    @IBOutlet weak var Your_Rating: UILabel!
+    @IBOutlet weak var pImage: UIImageView!
+    var id=Int()
+    
 
 }
