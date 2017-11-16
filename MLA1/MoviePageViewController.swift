@@ -20,7 +20,7 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
     var title1:String?
     var Rate:Int=0
     var mPoster=String()
-    var dbHandle:DatabaseHandle?
+    var dbHandle:DatabaseHandle!
     @IBOutlet weak var mName: UILabel!
     let image:String="https://image.tmdb.org/t/p/w500"
     @IBOutlet weak var Poster: UIImageView!
@@ -30,12 +30,46 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
     let userID = Auth.auth().currentUser?.uid
     @IBOutlet var StatusView: UIView!
     @IBOutlet weak var AddB: UIButton!
+    var keys = [String]();
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        dbHandle = ref?.child("Watchlists/Users/\(userID!)").observe(.value, with: { (snapshot) in
+            if let data = snapshot.value as? [String:Any]
+            {
+                for (key,value) in data{
+                    self.keys.append(key)}
+                if let movie=data["\(self.id)"] as? NSDictionary{
+                    
+                    self.AddB.backgroundColor=UIColor.lightGray
+                    if (movie["Status"]as?String)=="Completed"{
+                        self.AddB.setTitle("Completed", for: .normal)}
+                    else {self.AddB.setTitle("Plan to Watch", for: .normal)}
+                    
+                    let rate=movie.value(forKey:"Rate") as? String
+                    if (rate?.compare("-"))!.rawValue==0{
+                        print(rate)
+                    }
+                    else{
+                        let m=Int(rate!)
+                        for star in self.RatingStars {
+                            if star.tag <= m!{
+                                star .setTitle("★", for: UIControlState.normal )}
+                            else {star .setTitle("☆", for: UIControlState.normal )}
+                            
+                        }}
+                    
+                }
+            }})
+        
+        
+    }
     
     /////////////////// page//////////////
     override func viewDidAppear(_ animated: Bool) {
         Cast_result.delegate=self
         Cast_result.dataSource=self
-        print("IDDDDDDD!!!!!!\(id)")
         /////////////////////// loading the movie's data /////////////////////
         let Murl = URL(string:"https://api.themoviedb.org/3/movie/\(id)?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US")
         if id != 0 {
