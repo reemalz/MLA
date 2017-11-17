@@ -31,10 +31,10 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
     @IBOutlet var StatusView: UIView!
     @IBOutlet weak var AddB: UIButton!
     var keys = [String]();
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         dbHandle = ref?.child("Watchlists/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]
             {
@@ -46,12 +46,9 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
                     if (movie["Status"]as?String)=="Completed"{
                         self.AddB.setTitle("Completed", for: .normal)}
                     else {self.AddB.setTitle("Plan to Watch", for: .normal)}
-                    
                     let rate=movie.value(forKey:"Rate") as? String
-                    if (rate?.compare("-"))!.rawValue==0{
-                        print(rate)
-                    }
-                    else{
+                    let isEqual = ((rate == "-") || (rate == "0") || (rate == nil))
+                    if (isEqual == false){
                         let m=Int(rate!)
                         for star in self.RatingStars {
                             if star.tag <= m!{
@@ -105,21 +102,6 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
                                 DispatchQueue.main.async { self.Cast_result.reloadData()}}}}
                         catch{}}}}
             task2.resume()
-            /*dbHandle = ref?.child("Watchlists/Users/\(userID!)").observe(.value, with: { (snapshot) in
-                if let data = snapshot.value as? [String:Any] {
-                    var rate=data["Rate"]as? Int
-                    for star in self.RatingStars {
-                        if star.tag<=rate!{
-                            star .setTitle("★", for: UIControlState.normal )}
-                        else {star .setTitle("☆", for: UIControlState.normal )}
-                        
-                    }
-                    self.AddB.backgroundColor=UIColor.lightGray
-                    if (data["Status"]as?String)=="Completed"{
-                        self.AddB.setTitle("Completed", for: .normal)}
-                    else {self.AddB.setTitle("Plan to Watch", for: .normal)}}
-                else{print("oooppps!!!!!")}
-            })*/
         }
         else {print("error!!")}
 
@@ -169,7 +151,7 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
         StatusView.removeFromSuperview()
       
         //add the movie to the current users's watchlist
-        ref.child("Watchlists").child("Users").child(userID!).child("\(id)").setValue(["Title":title1!, "Status": "Plan to Watch", "Rate":self.Rate, "Poster":(image+mPoster)])
+        ref.child("Watchlists").child("Users").child(userID!).child("\(id)").setValue(["Title":title1!, "Status": "Plan to Watch","Rate": String(self.Rate), "Poster":(image+mPoster)])
     }
     
     @IBAction func Complete(_ sender: Any) {
@@ -178,7 +160,7 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
         StatusView.removeFromSuperview()
        
                 print("hellloooooo im current user")
-        self.ref.child("Watchlists").child("Users").child(userID!).child("\(self.id)").setValue(["Title":self.title1!, "Status": "Completed", "Rate":self.Rate,"Poster":(image+mPoster)])
+        self.ref.child("Watchlists").child("Users").child(userID!).child("\(self.id)").setValue(["Title":self.title1!, "Status": "Completed", "Rate": String(self.Rate),"Poster":(image+mPoster)])
     }
     
 
