@@ -33,6 +33,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBOutlet weak var usernameTextField: UITextField!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     

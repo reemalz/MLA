@@ -31,11 +31,9 @@ ActionBox.delegate = self
         
         // Do any additional setup after loading the view.
     }
-    func didtap(_ checkbox: BEMCheckBox){
-        checkbox.tag
-        
+    func didTap(_ checkBox: BEMCheckBox) {
+    
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

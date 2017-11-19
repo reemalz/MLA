@@ -14,21 +14,8 @@ class FriendTableViewCell: UITableViewCell {
     
     @IBOutlet weak var UserImg: UIImageView!
     var id=Int()
-   /* override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func `init`(){
+        UserImg.layer.cornerRadius = 25;
+        UserImg.layer.masksToBounds=true
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    func cell(Username:string , Uimg:String) {
-        self.UserNameLable.text = UserName
-        
-       self.UserNameLable.textColor = UIColor.white
-        self.contentView.backgroundColor = UIColor.black
-        
-    }*/
 }
