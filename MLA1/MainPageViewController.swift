@@ -156,6 +156,7 @@ LoadMystery()
     }
     //////////////// preparing to send  ID/////////////////
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "Search"{
         let movie=segue.destination as! MoviePageViewController
         if  let cell = sender as? CollectionViewCell{movie.id=cell.id}
         else if let cell = sender as? CollectionViewCell2{movie.id=cell.id}
@@ -163,6 +164,7 @@ LoadMystery()
         else if let cell = sender as? CollectionViewCell4{movie.id=cell.id}
         else if let cell = sender as? CollectionViewCell5{movie.id=cell.id}
         else if let cell = sender as? CollectionViewCell6{movie.id=cell.id}}
+ }
     
     func LoadAction() {
         let task = URLSession.shared.dataTask(with: action_url!){ data,respons,error in

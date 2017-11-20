@@ -13,9 +13,6 @@ class FriendTableViewCell: UITableViewCell {
     @IBOutlet weak var UserNameLable: UILabel!
     
     @IBOutlet weak var UserImg: UIImageView!
-    var id=Int()
-    func `init`(){
-        UserImg.layer.cornerRadius = 25;
-        UserImg.layer.masksToBounds=true
-    }
+    var id=String()
+
 }

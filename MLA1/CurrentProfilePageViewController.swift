@@ -14,9 +14,11 @@ class CurrentPageViewController: UIViewController , UITableViewDataSource , UITa
 
 
     @IBOutlet weak var FriendTable: UITableView!
+    
     var menu:Int!
     let ref : DatabaseReference! = Database.database().reference()
     let userID = Auth.auth().currentUser?.uid
+    var profileID=String()
     var dbHandle:DatabaseHandle!
     var dbHandle2:DatabaseHandle!
     var Followers=[String:Any]()
@@ -35,19 +37,12 @@ FriendTable.register(nip, forCellReuseIdentifier: "cell")
         dbHandle = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]
             {self.Followers=data
-                var i:Int=0;
-                for (key,value) in self.Followers{
-                    self.followersKeys[i]=key
-                    i=i+1
-                }
+               // var i:Int=0;
             }})
         dbHandle2 = ref?.child("Following/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]
             {self.Following=data
-                var i:Int=0;
-                for (key,value) in self.Following{
-                    self.followingsKeys[i]=key
-                    i=i+1}
+               // var i:Int=0;
             }})
     }
     
@@ -57,7 +52,7 @@ FriendTable.register(nip, forCellReuseIdentifier: "cell")
         // Dispose of any resources that can be recreated.
     }
     
-
+/////////////////SegmentPage/////////////
     @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
         menu=sender.selectedSegmentIndex
         FriendTable.reloadData()
@@ -71,9 +66,19 @@ FriendTable.register(nip, forCellReuseIdentifier: "cell")
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:FriendTableViewCell=FriendTable.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! FriendTableViewCell
         if menu==0{
+            cell.id=""
         }
         else{}
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let cell = tableView.cellForRow(at: indexPath) as! FriendTableViewCell
+        self.profileID=cell.id
+        performSegue(withIdentifier:"profile", sender: (Any).self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let profile=segue.destination as! ProfilePageViewController
+        profile.CurrentUserID=self.profileID
     }
 }
 
