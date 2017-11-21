@@ -85,6 +85,7 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     //////////Segment action/////////////
     
     @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
+        print("hellllo !!!!!!!!!!!!!!!!!!!!!")
         menu=sender.selectedSegmentIndex
         FriendTable.reloadData()
     }
@@ -112,9 +113,11 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     }
     /////////////Tabel view method///////////////
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            print(Following,"$$$$$$$$$$$$$$$$$$$$$")
+                    print(Followers,"%%%%%%%%%%%%%%%%%%%%")
         if menu==0{return Followers.count}
         else{return Following.count}
-    }
+}
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:FriendTableViewCell=FriendTable.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! FriendTableViewCell
