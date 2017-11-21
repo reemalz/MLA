@@ -1038,7 +1038,7 @@
         <!--CurrentUserProfilePage-->
         <scene sceneID="FLa-O0-Jef">
             <objects>
-                <viewController title="CurrentUserProfilePage" id="kQX-sq-OT7" customClass="CurrentPageViewController" customModule="MLA1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentUserProfile" title="CurrentUserProfilePage" id="kQX-sq-OT7" customClass="CurrentPageViewController" customModule="MLA1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c6h-FG-77C"/>
                         <viewControllerLayoutGuide type="bottom" id="im9-VS-U2o"/>
@@ -1059,25 +1059,8 @@
                                     <action selector="SwitchSegment:" destination="kQX-sq-OT7" eventType="valueChanged" id="VGL-mD-j5l"/>
                                 </connections>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZJ-rB-8jR">
-                                <rect key="frame" x="13" y="20" width="119" height="107"/>
-                                <color key="backgroundColor" red="0.27377229930000002" green="0.64208149910000001" blue="0.6231927276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5w-Lp-Rt2">
                                 <rect key="frame" x="7" y="177" width="25" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.25143247839999999" green="0.62027686829999995" blue="0.71156579259999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QM-Gh-DfS">
-                                <rect key="frame" x="16" y="295" width="184" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCd-I8-Ry3">
-                                <rect key="frame" x="7" y="266" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.25143247839999999" green="0.62027686829999995" blue="0.71156579259999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1138,15 +1121,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-aK-tFd">
+                                <rect key="frame" x="16" y="41" width="75" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.078965254129999995" green="0.06099196523" blue="0.067095577719999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="im9-VS-U2o" firstAttribute="top" secondItem="Ivh-vG-4Ua" secondAttribute="bottom" constant="279" id="XlU-a2-W0C"/>
-                            <constraint firstItem="Ivh-vG-4Ua" firstAttribute="centerX" secondItem="CZJ-rB-8jR" secondAttribute="centerX" id="Zb7-Mn-88D"/>
                             <constraint firstAttribute="trailing" secondItem="Ivh-vG-4Ua" secondAttribute="trailing" id="Zhz-ab-rMh"/>
                             <constraint firstItem="Ivh-vG-4Ua" firstAttribute="leading" secondItem="MQu-xF-dps" secondAttribute="leading" id="d5o-wL-CYI"/>
                             <constraint firstItem="Ivh-vG-4Ua" firstAttribute="centerX" secondItem="Eju-aO-8u9" secondAttribute="centerX" id="eUm-3o-m0E"/>
-                            <constraint firstItem="Ivh-vG-4Ua" firstAttribute="top" secondItem="7QM-Gh-DfS" secondAttribute="bottom" constant="13" id="nTi-Du-fHe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icons8-profile-30-2" id="nxE-Nh-uxw">
@@ -1244,19 +1229,13 @@
                                 </state>
                                 <connections>
                                     <action selector="Notifi:" destination="IUt-33-HJW" eventType="touchUpInside" id="04h-Nm-ANC"/>
+                                    <action selector="action:" destination="IUt-33-HJW" eventType="touchUpInside" id="od4-Zi-t6p"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="whF-Dg-6s1">
                                 <rect key="frame" x="141" y="75" width="75" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyO-y8-ReJ">
-                                <rect key="frame" x="147" y="162" width="95" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="aWs-jG-H0V">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -1265,12 +1244,19 @@
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="reply" id="rxA-R4-GMj">
                                             <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="vaa-mr-Bcy" kind="modal" id="u8G-BX-iqt"/>
+                                                <segue destination="CQq-vS-IYz" kind="modal" id="Lf0-Zt-NEq"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyO-y8-ReJ">
+                                <rect key="frame" x="131" y="162" width="95" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.078965254129999995" green="0.06099196523" blue="0.067095577719999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1484,7 +1470,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexColor" red="0.063013531270000006" green="0.050860710439999998" blue="0.054904855789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.063013531267642975" green="0.050860710442066193" blue="0.054904855787754059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="zHe-OU-J93" customClass="SearchTableViewCell" customModule="MLA1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -1515,11 +1503,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.063013531267642975" green="0.050860710442066193" blue="0.054904855787754059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="Pic" destination="7yu-2D-paE" id="mfi-IZ-ceB"/>
                                     <outlet property="Title" destination="cBT-TA-SAL" id="1gY-kP-LMT"/>
                                     <outlet property="details" destination="wAT-hg-ZdP" id="0ho-oj-noX"/>
-                                    <segue destination="IUt-33-HJW" kind="modal" identifier="Search" id="8u6-yD-OQI"/>
+                                    <segue destination="IUt-33-HJW" kind="modal" id="jIV-Fs-hd0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1528,7 +1517,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="uV3-e0-EC4">
                             <color key="tintColor" red="0.0018558051669970155" green="0.56960707902908325" blue="0.57558363676071167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="vaa-mr-Bcy" kind="modal" id="Ze7-Sa-PEF"/>
+                                <segue destination="CQq-vS-IYz" kind="modal" id="Mdo-Pf-QKN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1539,7 +1528,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7v-Ru-otC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-448.5" y="2746.5"/>
+            <point key="canvasLocation" x="-449" y="2747"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QuF-rn-oMa">
@@ -1558,7 +1547,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMA-xd-8dd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-447" y="1970"/>
+            <point key="canvasLocation" x="-449" y="1970"/>
         </scene>
     </scenes>
     <resources>
@@ -1571,9 +1560,9 @@
         <image name="user" width="75" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8u6-yD-OQI"/>
-        <segue reference="eLi-Eb-oHL"/>
+        <segue reference="jIV-Fs-hd0"/>
         <segue reference="sKR-6H-ZP0"/>
+        <segue reference="Lf0-Zt-NEq"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.078790493309497833" green="0.062608294188976288" blue="0.066617421805858612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

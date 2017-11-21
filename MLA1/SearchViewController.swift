@@ -120,12 +120,18 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
         }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Search" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let user = usersArrayN[indexPath.row]
+                if( (user!["UID"] as! String) == (userID!)){
+                    print("hellllllllooooooooooooooooo")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "CurrentUserProfile")
+                    self.present(vc!, animated: true, completion: nil)
+                }
+                else{
+                print("0000000000000000000000000")
                 let controller = segue.destination as? ProfilePageViewController
-                controller?.WantedUser = user!}
-        }
+                    controller?.WantedUser = user!}}
+        
     }
 }
 

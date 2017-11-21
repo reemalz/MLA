@@ -26,6 +26,7 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     var Following=[NSDictionary]()
     var followersKeys=[String]()
     var followingsKeys=[String]()
+    var UserN=String()
     @IBOutlet weak var Followbtn: UIButton!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var Bio: UILabel!
@@ -43,40 +44,67 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
         self.FriendTable.backgroundColor = UIColor.black
         /////// need to add DBhandller for the user data
         dbHandle = ref?.child("Users/\(userID!)").observe(.value, with: { (snapshot) in
-            if let data = snapshot.value as? [String:Any]
+            if let data = snapshot.value as? [String:String]
             {
+                self.UserN=data["Username"]!
+                // print(" USERRRR!!!!!$$$$$\(self.UserN)")
             }})
         dbHandle2 = ref?.child("Following/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]{
                 var found:Bool=false
-                var user = NSDictionary()
+                print(data)
                 for (_,value) in data{
-                    user=value as! NSDictionary
-                    if (user[self.WantedUser]) != nil{
-                        found=true}
-                    if(found){
-                        self.Followbtn.backgroundColor=UIColor.lightGray
-                        self.Followbtn.setTitle("Unfollow", for: .normal)}
-                        self.Following.append(user)}}})
-     /*   dbHandle = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
-            if let data = snapshot.value as? [String:Any]
-            {
-                var user=NSDictionary()
-                for (_,value) in data{
-                    user=value as! NSDictionary
-                    self.Followers.append(user)
+                    if let user=value as? NSArray{
+                        
+                        if user[0] as? String==self.WantedUser["Username"]as? String{
+                            print("@@£!!!U@@\(user[0])")
+                            self.Followbtn.backgroundColor=UIColor.lightGray
+                            self.Followbtn.setTitle("Unfollow", for: .normal)
+                        }
+                        else{print("OOOOoooopss!!!")}
+                        break
+                    }
+                    
                 }
-            }})*/
+                
+            }})
+        /*   dbHandle = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
+         if let data = snapshot.value as? [String:Any]
+         {
+         var user=NSDictionary()
+         for (_,value) in data{
+         user=value as! NSDictionary
+         self.Followers.append(user)
+         }
+         }})*/
     }
     
     
-
     
-   //////////Segment action/////////////
-
+    
+    //////////Segment action/////////////
+    
     @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
         menu=sender.selectedSegmentIndex
         FriendTable.reloadData()
+    }
+    
+    @IBAction func action(_ sender: UIButton) {
+        let UID=self.WantedUser["UID"] as! String
+        if(self.Followbtn.titleLabel?.text=="Follow"){
+            self.ref.child("Following").child("Users").child(userID!).child(UID).setValue([self.WantedUser["Username"]])
+            self.ref.child("Followers").child("Users").child(UID).child(userID!).setValue([self.UserN])
+            self.Followbtn.backgroundColor=UIColor.lightGray
+            self.Followbtn.setTitle("Unfollow", for: .normal)
+        }
+        else{
+            
+            self.ref.child("Following").child("Users").child(userID!).child(UID).removeValue()
+            self.ref.child("Followers").child("Users").child(UID).child(userID!).removeValue()
+            self.Followbtn.backgroundColor=UIColor(red: 0.149, green: 0.549, blue: 0.6392, alpha: 1.0)
+            self.Followbtn.setTitle("Follow", for: .normal)
+        }
+        
     }
     ////////// notification//////
     
@@ -95,6 +123,7 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
         else{}
         return cell
     }
+    
     
     
 }
