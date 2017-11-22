@@ -124,7 +124,7 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
                 let user = usersArrayN[indexPath.row]
                 if( (user!["UID"] as! String) == (userID!)){
                     print("hellllllllooooooooooooooooo")
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "CurrentUserProfile")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "tab")
                     self.present(vc!, animated: true, completion: nil)
                 }
                 else{

@@ -16,6 +16,8 @@
 
 import UIKit
 import AFNetworking
+import UserNotifications
+
 class MainPageController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -70,6 +72,9 @@ LoadMystery()
     ///////////////////////////////////// end of viewDidLoad
     }
     override func viewWillAppear(_ animated: Bool) {
+        //reset Notification
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         scrollView.delegate=self
         scrollView.isScrollEnabled=true
         scrollView.contentSize.height=2050

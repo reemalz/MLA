@@ -58,7 +58,22 @@ FriendTable.register(nip, forCellReuseIdentifier: "cell")
         FriendTable.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    /////////////Tabel view method///////////////
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 
+        if menu==0{return Followers.count}
+        else{return Following.count}
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:FriendTableViewCell=FriendTable.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! FriendTableViewCell
+        if menu==0{
+        }
+        else{}
+        return cell
+    }
+    
+  /*  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if menu==0{return Followers.count}
         else{return Following.count}
     }
@@ -79,7 +94,7 @@ FriendTable.register(nip, forCellReuseIdentifier: "cell")
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          let profile=segue.destination as! ProfilePageViewController
         profile.CurrentUserID=self.profileID
-    }
+    }*/
 }
 
 

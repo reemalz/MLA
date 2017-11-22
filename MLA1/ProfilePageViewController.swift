@@ -6,9 +6,12 @@
 //  Copyright © ١٤٣٩ هـ njoool . All rights reserved.
 //
 
+
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import UserNotifications
+
 
 
 class ProfilePageViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
@@ -33,10 +36,12 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     var CurrentUserID=String()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        menu=0;
+        //fill page
         self.userName.text = WantedUser["Username"] as? String
         self.Bio.text = WantedUser["Bio"] as? String
-        menu=0;
-        super.viewDidLoad()
+        
         let nip = UINib(nibName: "FriendTableViewCell", bundle: nil)
         FriendTable.register(nip, forCellReuseIdentifier: "cell")
         FriendTable.delegate = self
@@ -45,14 +50,11 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
         /////// need to add DBhandller for the user data
         dbHandle = ref?.child("Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:String]
-            {
-                self.UserN=data["Username"]!
-                // print(" USERRRR!!!!!$$$$$\(self.UserN)")
-            }})
+                //self user name
+            {self.UserN=data["Username"]!}})
+        
         dbHandle2 = ref?.child("Following/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]{
-                var found:Bool=false
-                print(data)
                 for (_,value) in data{
                     if let user=value as? NSArray{
                         
@@ -68,15 +70,19 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
                 }
                 
             }})
-        /*   dbHandle = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
-         if let data = snapshot.value as? [String:Any]
-         {
-         var user=NSDictionary()
-         for (_,value) in data{
-         user=value as! NSDictionary
-         self.Followers.append(user)
-         }
-         }})*/
+        /////////////Followers notfications/////////////
+        dbHandle3 = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
+            if let data = snapshot.value as? [String:Any]{
+                for (_,value) in data{
+                    print("@£@££$£@\(value)")}
+                let content=UNMutableNotificationContent()
+                content.title="you have new follower"
+                content.badge=1
+                let trigger=UNTimeIntervalNotificationTrigger.init(timeInterval:5, repeats: false)
+                let request=UNNotificationRequest.init(identifier:"wte", content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler:nil)
+            }})
+        
     }
     
     
