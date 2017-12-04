@@ -15,11 +15,14 @@
 //
 
 import UIKit
-import AFNetworking
+import FirebaseDatabase
+import FirebaseAuth
 import UserNotifications
 
 class MainPageController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
-    
+    var ref : DatabaseReference!
+    var dbHandle:DatabaseHandle?
+    let userID = Auth.auth().currentUser?.uid
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var Action: UICollectionView!
     @IBOutlet weak var Drama: UICollectionView!
@@ -57,6 +60,31 @@ class MainPageController: UIViewController,UICollectionViewDelegate,UICollection
         Mystery.delegate=self
         Mystery.dataSource=self
         
+        //set database ref
+        ref = Database.database().reference()
+        /////////////Followers NNNNNotfications//////////////\(userID!)
+        
+  /*      let id = ref.child("Followers/Users/\(self.userID!)").
+                    print("*****************************",id,"******************************")
+
+        dbHandle = ref?.child("Followers/Users").queryLimited(toLast: 1)
+            .observe(.childAdded, with: { (snapshot) in
+            if let data = snapshot.value as? [String:Any]{
+                            print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$",data,"$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+                let content=UNMutableNotificationContent()
+                content.title="you have new follower \(data)"
+                content.badge=1
+                let trigger=UNTimeIntervalNotificationTrigger.init(timeInterval:5, repeats: false)
+                let request=UNNotificationRequest.init(identifier:"wte", content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler:nil)
+            }})
+        
+ //       ref.sin
+   //     ref.queryLimited(toLast: 1)
+     //       .observe(.childAdded, with: { snapshot in
+         //       print(snapshot?.value)
+       //     })*/
+        
 /////////Action posters////////////////
 LoadAction()
 //////////////Drama posters////////////
@@ -79,7 +107,7 @@ LoadMystery()
         scrollView.isScrollEnabled=true
         scrollView.contentSize.height=2050
         scrollView.contentSize.width=500
-    }
+        }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { if collectionView == Action{return ActionResult.count}
     else if collectionView == Drama {return DramaResult.count}

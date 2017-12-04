@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MLA1/WatchListViewController.swift"
-            timestampString = "532957445.61627"
+            timestampString = "533716113.601077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -42,13 +42,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Downloads/MLA-master/MLA1/ProfilePageViewController.swift"
-            timestampString = "533039185.295559"
+            timestampString = "533796118.371045"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "ProfilePageViewController"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MLA1/MainPageViewController.swift"
+            timestampString = "533898884.762195"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "MainPageController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "variable initialization expression of MLA1.MainPageController.userID : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "MLA1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Joll/Desktop/MLA/MLA1/MainPageViewController.swift"
+                  timestampString = "533676518.228427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MLA1.MainPageController.userID.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "MLA1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Joll/Desktop/MLA/MLA1/MainPageViewController.swift"
+                  timestampString = "533676518.231896"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MLA1.MainPageController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MLA1.MainPageController"
+                  moduleName = "MLA1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Joll/Desktop/MLA/MLA1/MainPageViewController.swift"
+                  timestampString = "533676518.235168"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MLA1.MainPageController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;MLA1.MainPageController&gt;"
+                  moduleName = "MLA1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Joll/Desktop/MLA/MLA1/MainPageViewController.swift"
+                  timestampString = "533676518.238279"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "261">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

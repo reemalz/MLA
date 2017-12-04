@@ -109,7 +109,6 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("movie count \(Movie_Cast.count)")
         return Movie_Cast.count}
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CollectionViewCell7=collectionView.dequeueReusableCell(withReuseIdentifier: "cell7", for: indexPath) as! CollectionViewCell7
@@ -158,8 +157,6 @@ class MoviePageViewController:UIViewController,UICollectionViewDelegate,UICollec
         self.AddB.backgroundColor = UIColor.lightGray
         AddB.setTitle("Complete", for: .normal)
         StatusView.removeFromSuperview()
-       
-                print("hellloooooo im current user")
         self.ref.child("Watchlists").child("Users").child(userID!).child("\(self.id)").setValue(["Title":self.title1!, "Status": "Completed", "Rate": String(self.Rate),"Poster":(image+mPoster)])
     }
     

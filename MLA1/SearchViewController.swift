@@ -39,10 +39,7 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
         ref = Database.database().reference()
         dbHandle = ref?.child("Users").queryOrdered(byChild: "Username").observe(.value, with: { (snapshot) in
             if let getData = snapshot.value as? [String:Any] {
-           //     if(usersArray[userID])  لااااازم
                 self.usersArray=getData
-
-
                 self.tableView.reloadData()
                 self.filteredUsers = self.usersArray
             }
@@ -121,14 +118,12 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let user = usersArrayN[indexPath.row]
+                let user = filteredUsersN[indexPath.row]
                 if( (user!["UID"] as! String) == (userID!)){
-                    print("hellllllllooooooooooooooooo")
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "tab")
                     self.present(vc!, animated: true, completion: nil)
                 }
                 else{
-                print("0000000000000000000000000")
                 let controller = segue.destination as? ProfilePageViewController
                     controller?.WantedUser = user!}}
         

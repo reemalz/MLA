@@ -6,12 +6,9 @@
 //  Copyright © ١٤٣٩ هـ njoool . All rights reserved.
 //
 
-
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
-import UserNotifications
-
 
 
 class ProfilePageViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
@@ -36,12 +33,10 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     var CurrentUserID=String()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        menu=0;
-        //fill page
         self.userName.text = WantedUser["Username"] as? String
         self.Bio.text = WantedUser["Bio"] as? String
-        
+        menu=0;
+        super.viewDidLoad()
         let nip = UINib(nibName: "FriendTableViewCell", bundle: nil)
         FriendTable.register(nip, forCellReuseIdentifier: "cell")
         FriendTable.delegate = self
@@ -50,11 +45,14 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
         /////// need to add DBhandller for the user data
         dbHandle = ref?.child("Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:String]
-                //self user name
-            {self.UserN=data["Username"]!}})
-        
+            {
+                self.UserN=data["Username"]!
+                // print(" USERRRR!!!!!$$$$$\(self.UserN)")
+            }})
         dbHandle2 = ref?.child("Following/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]{
+                var found:Bool=false
+                print(data)
                 for (_,value) in data{
                     if let user=value as? NSArray{
                         
@@ -70,19 +68,15 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
                 }
                 
             }})
-        /////////////Followers notfications/////////////
-        dbHandle3 = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
-            if let data = snapshot.value as? [String:Any]{
-                for (_,value) in data{
-                    print("@£@££$£@\(value)")}
-                let content=UNMutableNotificationContent()
-                content.title="you have new follower"
-                content.badge=1
-                let trigger=UNTimeIntervalNotificationTrigger.init(timeInterval:5, repeats: false)
-                let request=UNNotificationRequest.init(identifier:"wte", content: content, trigger: trigger)
-                UNUserNotificationCenter.current().add(request, withCompletionHandler:nil)
-            }})
-        
+        /*   dbHandle = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
+         if let data = snapshot.value as? [String:Any]
+         {
+         var user=NSDictionary()
+         for (_,value) in data{
+         user=value as! NSDictionary
+         self.Followers.append(user)
+         }
+         }})*/
     }
     
     
@@ -91,7 +85,6 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     //////////Segment action/////////////
     
     @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
-        print("hellllo !!!!!!!!!!!!!!!!!!!!!")
         menu=sender.selectedSegmentIndex
         FriendTable.reloadData()
     }
@@ -119,11 +112,9 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     }
     /////////////Tabel view method///////////////
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            print(Following,"$$$$$$$$$$$$$$$$$$$$$")
-                    print(Followers,"%%%%%%%%%%%%%%%%%%%%")
         if menu==0{return Followers.count}
         else{return Following.count}
-}
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:FriendTableViewCell=FriendTable.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! FriendTableViewCell
@@ -133,7 +124,17 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
         return cell
     }
     
+
     
+    /////////////Go to friends whatchList///////////////
+    @IBAction func WatchListB(_ sender: Any) {
+        performSegue(withIdentifier: "WatchF", sender: "")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                let controller = segue.destination as? FriendWatchListViewController
+        controller?.WantedUser = WantedUser
+        }
     
 }
 

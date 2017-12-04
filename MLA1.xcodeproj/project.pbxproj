@@ -10,12 +10,16 @@
 		0F8BC1BF1FA8775D004B696D /* MoviePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */; };
 		0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */; };
 		6105BE021F93C0D000F6EDC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */; };
+		611A7E441FD5CEAD007EE94C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A7E431FD5CEAD007EE94C /* EditProfileViewController.swift */; };
+		61AE0A851FD1177200F59FF0 /* Top20CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AE0A841FD1177200F59FF0 /* Top20CollectionCell.swift */; };
+		61AE0A871FD117DB00F59FF0 /* Top20ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AE0A861FD117DA00F59FF0 /* Top20ViewController.swift */; };
 		61C60F3C1FC322F90004AC6A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C60F3A1FC322F90004AC6A /* SearchTableViewCell.swift */; };
 		61C60F3D1FC322F90004AC6A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C60F3B1FC322F90004AC6A /* SearchViewController.swift */; };
 		61CA198B1F9151B8007C1509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA198A1F9151B8007C1509 /* AppDelegate.swift */; };
 		61CA198D1F9151B8007C1509 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA198C1F9151B8007C1509 /* ViewController.swift */; };
 		61CA19901F9151B8007C1509 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61CA198E1F9151B8007C1509 /* Main.storyboard */; };
 		61CA19951F9151B9007C1509 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61CA19931F9151B9007C1509 /* LaunchScreen.storyboard */; };
+		61E7746E1FCD71910020721F /* FriendWatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E7746D1FCD71910020721F /* FriendWatchListViewController.swift */; };
 		61E83F2B1F9271470048D4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61E83F2A1F9271470048D4E1 /* Assets.xcassets */; };
 		87981A681F97D9BC0002D94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87981A671F97D9BC0002D94A /* LoginViewController.swift */; };
 		87981A6A1F97ECC50002D94A /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87981A691F97ECC50002D94A /* LogoutViewController.swift */; };
@@ -41,6 +45,9 @@
 		0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		297F3118F12E4CF987D49C68 /* Pods-MLA1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLA1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLA1/Pods-MLA1.debug.xcconfig"; sourceTree = "<group>"; };
 		6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		611A7E431FD5CEAD007EE94C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		61AE0A841FD1177200F59FF0 /* Top20CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top20CollectionCell.swift; sourceTree = "<group>"; };
+		61AE0A861FD117DA00F59FF0 /* Top20ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top20ViewController.swift; sourceTree = "<group>"; };
 		61C60F3A1FC322F90004AC6A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		61C60F3B1FC322F90004AC6A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		61CA19871F9151B8007C1509 /* MLA1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLA1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +56,7 @@
 		61CA198F1F9151B8007C1509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61CA19941F9151B9007C1509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61CA19961F9151B9007C1509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61E7746D1FCD71910020721F /* FriendWatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendWatchListViewController.swift; sourceTree = "<group>"; };
 		61E83F2A1F9271470048D4E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87981A671F97D9BC0002D94A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		87981A691F97ECC50002D94A /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
@@ -125,10 +133,14 @@
 				61CA198C1F9151B8007C1509 /* ViewController.swift */,
 				0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */,
 				61C60F3A1FC322F90004AC6A /* SearchTableViewCell.swift */,
+				61AE0A841FD1177200F59FF0 /* Top20CollectionCell.swift */,
+				61AE0A861FD117DA00F59FF0 /* Top20ViewController.swift */,
 				61C60F3B1FC322F90004AC6A /* SearchViewController.swift */,
 				E3B9A1981FBF728D00DBB85E /* ProfilePageViewController.swift */,
 				E3B9A19A1FBF72A500DBB85E /* CurrentProfilePageViewController.swift */,
 				61CA198E1F9151B8007C1509 /* Main.storyboard */,
+				611A7E431FD5CEAD007EE94C /* EditProfileViewController.swift */,
+				61E7746D1FCD71910020721F /* FriendWatchListViewController.swift */,
 				0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */,
 				E3FE4CFB1F9BF03600B5F7B9 /* MainPageViewController.swift */,
 				87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */,
@@ -304,8 +316,11 @@
 				0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */,
 				61CA198B1F9151B8007C1509 /* AppDelegate.swift in Sources */,
 				E3FE4D061F9BF0C500B5F7B9 /* CollectionViewCell5.swift in Sources */,
+				61AE0A871FD117DB00F59FF0 /* Top20ViewController.swift in Sources */,
+				61AE0A851FD1177200F59FF0 /* Top20CollectionCell.swift in Sources */,
 				E3FE4CFE1F9BF07E00B5F7B9 /* CollectionViewCell.swift in Sources */,
 				61C60F3C1FC322F90004AC6A /* SearchTableViewCell.swift in Sources */,
+				61E7746E1FCD71910020721F /* FriendWatchListViewController.swift in Sources */,
 				E3FE4D021F9BF0A300B5F7B9 /* CollectionViewCell3.swift in Sources */,
 				87981A6A1F97ECC50002D94A /* LogoutViewController.swift in Sources */,
 				E3FE4D001F9BF09500B5F7B9 /* CollectionViewCell2.swift in Sources */,
@@ -316,6 +331,7 @@
 				87ECD9341FB1D9F40094B957 /* TableViewCellWatchList.swift in Sources */,
 				E3FE4CFC1F9BF03600B5F7B9 /* MainPageViewController.swift in Sources */,
 				E3B9A19B1FBF72A600DBB85E /* CurrentProfilePageViewController.swift in Sources */,
+				611A7E441FD5CEAD007EE94C /* EditProfileViewController.swift in Sources */,
 				87981A681F97D9BC0002D94A /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
