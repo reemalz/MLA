@@ -28,6 +28,7 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     var followingsKeys=[String]()
     var UserN=String()
     @IBOutlet weak var Followbtn: UIButton!
+    @IBOutlet weak var Pic: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var Bio: UILabel!
     var CurrentUserID=String()
@@ -35,6 +36,10 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     override func viewDidLoad() {
         self.userName.text = WantedUser["Username"] as? String
         self.Bio.text = WantedUser["Bio"] as? String
+        if let m=WantedUser["Pic"] as? String{
+            var url=URL(string:m)
+            self.Pic.setImageWith(url!)
+        }
         menu=0;
         super.viewDidLoad()
         let nip = UINib(nibName: "FriendTableViewCell", bundle: nil)

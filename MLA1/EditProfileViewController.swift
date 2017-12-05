@@ -110,9 +110,9 @@ class EditProfileViewController: UIViewController , UINavigationControllerDelega
                 {
                     let downloadUrl = metadata!.downloadURL()
                     self.databaseRef.child("Users").child(self.loggedInUser!.uid).child("Pic").setValue(String(describing:downloadUrl!))
-                    /*
+                    
                      let vc = self.storyboard?.instantiateViewController(withIdentifier: "CurrentUserProfile")
-                     self.present(vc!, animated: true, completion: nil)*/
+                     self.present(vc!, animated: true, completion: nil)
                 }
                 else
                 {

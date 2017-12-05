@@ -19,23 +19,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
-
+    
     func textFieldShouldReturn(_ textfield:UITextField)->Bool{
         textfield.resignFirstResponder()
         return true}
     
     @IBAction func loginAction(_ sender: Any) {
-    
+        
         
         if self.emailTextField.text == "" || self.passwordTextField.text == "" {
             
@@ -75,21 +75,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-  /*  func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        if emailTextField.isFirstResponder {
-            passwordTextField.becomeFirstResponder
-        }
-        else {
-            passwordTextField.resignFirstResponder
-        }
-            return true}
-  return false  }*/
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    /*  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+     if emailTextField.isFirstResponder {
+     passwordTextField.becomeFirstResponder
+     }
+     else {
+     passwordTextField.resignFirstResponder
+     }
+     return true}
+     return false  }*/
 }
+

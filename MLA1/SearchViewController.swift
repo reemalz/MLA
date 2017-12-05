@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-
 class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate,UISearchResultsUpdating,UISearchBarDelegate{
     
     
@@ -89,6 +88,9 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
         
         cell.Title?.text = user?["Username"] as? String
         cell.details?.text = user?["Email"] as? String
+        if let pic=user?["Pic"] as? String{
+            let url=URL(string:pic)
+            cell.Pic?.setImageWith(url!)}
         return(cell)
     }
     
