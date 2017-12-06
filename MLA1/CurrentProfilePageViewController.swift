@@ -28,6 +28,7 @@ class CurrentPageViewController: UIViewController , UITableViewDataSource , UITa
     @IBOutlet weak var bio: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var interests: UILabel!
     
     override func viewDidLoad() {
         menu=1;
@@ -38,8 +39,14 @@ class CurrentPageViewController: UIViewController , UITableViewDataSource , UITa
             //initially the user will not have a bio data
             if(snapshot["Bio"] !== nil)
             {
-                self.bio.text = snapshot["Bio"] as? String
+            self.bio.text = snapshot["Bio"] as? String
             }
+            
+            if(snapshot["Interests"] !== nil)
+            {
+            self.interests.text = snapshot["Interests"] as? String
+            }
+            
             if(snapshot["Pic"] !== nil)
             {
                 // print()

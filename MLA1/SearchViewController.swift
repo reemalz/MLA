@@ -22,6 +22,7 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
     var filteredUsers=[String:Any]()
     var usersArrayN=[NSDictionary?]()
     var filteredUsersN=[NSDictionary?]()
+    var id = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,17 +118,32 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
             self.tableView.reloadData()
         }
         }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       // let cell=tableView.cellForRow(at:indexPath) as! SearchTableViewCell
+        let user = filteredUsersN[indexPath.row]
+        if( (user!["UID"] as! String) == (userID!)){
+            performSegue(withIdentifier:"tab", sender:SearchTableViewCell())
+        }
+        else {
+            self.id = indexPath.row
+            performSegue(withIdentifier:"profile", sender:SearchTableViewCell())}
+    }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let user = filteredUsersN[indexPath.row]
-                if( (user!["UID"] as! String) == (userID!)){
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "tab")
-                    self.present(vc!, animated: true, completion: nil)
+                if segue.identifier=="tab"{
+                    let tabbarController = segue.destination as! UITabBarController
+                    tabbarController.selectedIndex = 3
+                    
+ //                   let vc = self.storyboard?.instantiateViewController(withIdentifier: "tab")
+   //                  self.present(vc!, animated: true, completion: nil)
+                    
                 }
-                else{
-                let controller = segue.destination as? ProfilePageViewController
-                    controller?.WantedUser = user!}}
+                else if segue.identifier=="profile"{
+                    let user = self.usersArrayN[self.id]
+                let controller = segue.destination as! ProfilePageViewController
+                    controller.WantedUser = user!}
+                
+        
         
     }
 }

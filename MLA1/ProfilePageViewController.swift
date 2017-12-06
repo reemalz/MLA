@@ -14,6 +14,7 @@ import FirebaseAuth
 class ProfilePageViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
     
     
+    
     @IBOutlet weak var FriendTable: UITableView!
     var menu:Int!
     var WantedUser = NSDictionary()
@@ -31,11 +32,13 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     @IBOutlet weak var Pic: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var Bio: UILabel!
+    @IBOutlet weak var interests: UILabel!
     var CurrentUserID=String()
     
     override func viewDidLoad() {
         self.userName.text = WantedUser["Username"] as? String
         self.Bio.text = WantedUser["Bio"] as? String
+        self.interests.text = WantedUser["Interests"] as? String
         if let m=WantedUser["Pic"] as? String{
             var url=URL(string:m)
             self.Pic.setImageWith(url!)
