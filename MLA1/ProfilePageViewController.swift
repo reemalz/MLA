@@ -36,6 +36,7 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     var CurrentUserID=String()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.userName.text = WantedUser["Username"] as? String
         self.Bio.text = WantedUser["Bio"] as? String
         self.interests.text = WantedUser["Interests"] as? String
@@ -44,7 +45,6 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
             self.Pic.setImageWith(url!)
         }
         menu=0;
-        super.viewDidLoad()
         let nip = UINib(nibName: "FriendTableViewCell", bundle: nil)
         FriendTable.register(nip, forCellReuseIdentifier: "cell")
         FriendTable.delegate = self
@@ -55,22 +55,20 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
             if let data = snapshot.value as? [String:String]
             {
                 self.UserN=data["Username"]!
-                // print(" USERRRR!!!!!$$$$$\(self.UserN)")
             }})
         dbHandle2 = ref?.child("Following/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]{
                 var found:Bool=false
-                print(data)
                 for (_,value) in data{
                     if let user=value as? NSArray{
-                        
-                        if user[0] as? String==self.WantedUser["Username"]as? String{
-                            print("@@£!!!U@@\(user[0])")
+                        if user[0] as! String == self.WantedUser["Username"] as!String{
                             self.Followbtn.backgroundColor=UIColor.lightGray
                             self.Followbtn.setTitle("Unfollow", for: .normal)
+                          break
                         }
+                        
                         else{print("OOOOoooopss!!!")}
-                        break
+                        
                     }
                     
                 }
