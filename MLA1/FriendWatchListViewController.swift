@@ -11,6 +11,7 @@ import FirebaseAuth
 class FriendWatchListViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
 
 
+    @IBOutlet weak var navigation: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     var WantedUser = NSDictionary()
     var ref : DatabaseReference!
@@ -22,7 +23,7 @@ class FriendWatchListViewController: UIViewController ,UITableViewDataSource,UIT
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier:"cell")
         tableView.delegate = self
         tableView.dataSource = self
-        
+        navigation.topItem?.title = "\(WantedUser["Username"]!)'s Watch List"
         //set database ref
         ref = Database.database().reference()
         
@@ -42,7 +43,7 @@ class FriendWatchListViewController: UIViewController ,UITableViewDataSource,UIT
         })
     }
     
-    
+
     
     //var WatchList:[NSDictionary] = [];
     

@@ -156,7 +156,7 @@ class EditProfileViewController: UIViewController , UINavigationControllerDelega
         }
         if segue.identifier=="SaveSegue"{
             let page=segue.destination as! UITabBarController
-            page.selectedIndex = 4
+            page.selectedIndex = 3
             
         }
     }

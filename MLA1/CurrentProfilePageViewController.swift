@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class CurrentPageViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
+class CurrentPageViewController: UIViewController , UITableViewDelegate{
     
     
     @IBOutlet weak var FriendTable: UITableView!
@@ -57,7 +57,7 @@ class CurrentPageViewController: UIViewController , UITableViewDataSource , UITa
                 //self.setProfilePicture(self.profilePicture,imageToSet:UIImage(data:data!)!)
             }
         })
-        let nip = UINib(nibName: "FriendTableViewCell", bundle: nil)
+      /*  let nip = UINib(nibName: "FriendTableViewCell", bundle: nil)
         FriendTable.register(nip, forCellReuseIdentifier: "cell")
         FriendTable.delegate = self
         FriendTable.dataSource = self
@@ -73,7 +73,7 @@ class CurrentPageViewController: UIViewController , UITableViewDataSource , UITa
             {self.Following=data
                 // var i:Int=0;
             }})
-        
+        */
     }
     
   
@@ -83,7 +83,7 @@ class CurrentPageViewController: UIViewController , UITableViewDataSource , UITa
     }
     
     /////////////////SegmentPage/////////////
-    @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
+  /*  @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
         menu=sender.selectedSegmentIndex
         print(menu,"ssddww!!")
         FriendTable.reloadData()
@@ -109,7 +109,7 @@ class CurrentPageViewController: UIViewController , UITableViewDataSource , UITa
       //  self.profileID=cell.id
         //performSegue(withIdentifier:"profile", sender: (Any).self)
     }
-    /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      let profile=segue.destination as! ProfilePageViewController
      profile.CurrentUserID=self.profileID
      }*/

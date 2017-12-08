@@ -11,7 +11,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 
-class ProfilePageViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
+class ProfilePageViewController: UIViewController , UITableViewDelegate{
     
     
     
@@ -23,10 +23,10 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     var dbHandle:DatabaseHandle!
     var dbHandle2:DatabaseHandle!
     var dbHandle3:DatabaseHandle!
-    var Followers=[NSDictionary]()
-    var Following=[NSDictionary]()
-    var followersKeys=[String]()
-    var followingsKeys=[String]()
+//var Followers=[NSDictionary]()
+//var Following=[NSDictionary]()
+//var followersKeys=[String]()
+//var followingsKeys=[String]()
     var UserN=String()
     @IBOutlet weak var Followbtn: UIButton!
     @IBOutlet weak var Pic: UIImageView!
@@ -36,7 +36,6 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     var CurrentUserID=String()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.userName.text = WantedUser["Username"] as? String
         self.Bio.text = WantedUser["Bio"] as? String
         self.interests.text = WantedUser["Interests"] as? String
@@ -45,17 +44,15 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
             self.Pic.setImageWith(url!)
         }
         menu=0;
-        let nip = UINib(nibName: "FriendTableViewCell", bundle: nil)
-        FriendTable.register(nip, forCellReuseIdentifier: "cell")
-        FriendTable.delegate = self
-        FriendTable.dataSource = self
-        self.FriendTable.backgroundColor = UIColor.black
+        super.viewDidLoad()
         /////// need to add DBhandller for the user data
         dbHandle = ref?.child("Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:String]
             {
                 self.UserN=data["Username"]!
+                // print(" USERRRR!!!!!$$$$$\(self.UserN)")
             }})
+        
         dbHandle2 = ref?.child("Following/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]{
                 var found:Bool=false
@@ -64,16 +61,10 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
                         if user[0] as! String == self.WantedUser["Username"] as!String{
                             self.Followbtn.backgroundColor=UIColor.lightGray
                             self.Followbtn.setTitle("Unfollow", for: .normal)
-                          break
+                            break
                         }
-                        
-                        else{print("OOOOoooopss!!!")}
-                        
-                    }
-                    
-                }
-                
-            }})
+                        else {print("Ops")}}
+                    }}})
         /*   dbHandle = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
          if let data = snapshot.value as? [String:Any]
          {
@@ -89,11 +80,11 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
     
     
     //////////Segment action/////////////
-    
+  /*
     @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
         menu=sender.selectedSegmentIndex
         FriendTable.reloadData()
-    }
+    }*/
     
     @IBAction func action(_ sender: UIButton) {
         let UID=self.WantedUser["UID"] as! String
@@ -112,12 +103,9 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
         }
         
     }
-    ////////// notification//////
-    
-    @IBAction func Notifi(_ sender: UIButton) {
-    }
+
     /////////////Tabel view method///////////////
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  /*  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if menu==0{return Followers.count}
         else{return Following.count}
     }
@@ -129,7 +117,7 @@ class ProfilePageViewController: UIViewController , UITableViewDataSource , UITa
         else{}
         return cell
     }
-    
+    */
 
     
     /////////////Go to friends whatchList///////////////
