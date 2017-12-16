@@ -26,7 +26,6 @@
 		87ECD9341FB1D9F40094B957 /* TableViewCellWatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ECD9331FB1D9F40094B957 /* TableViewCellWatchList.swift */; };
 		87F6A9F11F97A58B00FA6B60 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F6A9F01F97A58B00FA6B60 /* RegisterViewController.swift */; };
 		E39FD9DB1FAFC8C30095AD57 /* CollectionViewCell7.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FD9DA1FAFC8C30095AD57 /* CollectionViewCell7.swift */; };
-		E3B9A1951FBF725C00DBB85E /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B9A1941FBF725C00DBB85E /* FriendTableViewCell.xib */; };
 		E3B9A1971FBF726900DBB85E /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9A1961FBF726900DBB85E /* FriendTableViewCell.swift */; };
 		E3B9A1991FBF728D00DBB85E /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9A1981FBF728D00DBB85E /* ProfilePageViewController.swift */; };
 		E3B9A19B1FBF72A600DBB85E /* CurrentProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9A19A1FBF72A500DBB85E /* CurrentProfilePageViewController.swift */; };
@@ -65,7 +64,6 @@
 		8B34BCD5A24448B3756994A0 /* Pods-MLA1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLA1.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLA1/Pods-MLA1.release.xcconfig"; sourceTree = "<group>"; };
 		984BB218D37E4B2A1F08976C /* Pods_MLA1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLA1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39FD9DA1FAFC8C30095AD57 /* CollectionViewCell7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell7.swift; sourceTree = "<group>"; };
-		E3B9A1941FBF725C00DBB85E /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		E3B9A1961FBF726900DBB85E /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		E3B9A1981FBF728D00DBB85E /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		E3B9A19A1FBF72A500DBB85E /* CurrentProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentProfilePageViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				E3FE4D011F9BF0A300B5F7B9 /* CollectionViewCell3.swift */,
 				E3FE4D031F9BF0B000B5F7B9 /* CollectionViewCell4.swift */,
 				E3FE4D051F9BF0C500B5F7B9 /* CollectionViewCell5.swift */,
-				E3B9A1941FBF725C00DBB85E /* FriendTableViewCell.xib */,
 				E3FE4D071F9BF0D600B5F7B9 /* CollectionViewCell6.swift */,
 				E39FD9DA1FAFC8C30095AD57 /* CollectionViewCell7.swift */,
 				6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */,
@@ -231,7 +228,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B9A1951FBF725C00DBB85E /* FriendTableViewCell.xib in Resources */,
 				61CA19951F9151B9007C1509 /* LaunchScreen.storyboard in Resources */,
 				6105BE021F93C0D000F6EDC7 /* GoogleService-Info.plist in Resources */,
 				61E83F2B1F9271470048D4E1 /* Assets.xcassets in Resources */,

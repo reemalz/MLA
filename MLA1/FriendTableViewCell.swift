@@ -14,5 +14,6 @@ class FriendTableViewCell: UITableViewCell {
     
     @IBOutlet weak var UserImg: UIImageView!
     var id=String()
+    var index=Int()
 
 }

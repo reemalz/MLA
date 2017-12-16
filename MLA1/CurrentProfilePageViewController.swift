@@ -10,112 +10,123 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class CurrentPageViewController: UIViewController , UITableViewDelegate{
+class CurrentPageViewController: UIViewController , UITableViewDelegate,UITableViewDataSource{
     
     
     @IBOutlet weak var FriendTable: UITableView!
-    var currentUser = Auth.auth().currentUser
-    var menu:Int!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     let ref : DatabaseReference! = Database.database().reference()
     let userID = Auth.auth().currentUser?.uid
     var profileID=String()
     var dbHandle:DatabaseHandle!
     var dbHandle2:DatabaseHandle!
-    var Followers=[String:Any]()
-    var Following=[String:Any]()
-    var followersKeys=[String]()
-    var followingsKeys=[String]()
+    var Followers=[NSDictionary]()
+    var Following=[NSDictionary]()
+   // var followersKeys=[String]()
+   // var followingsKeys=[String]()
     @IBOutlet weak var bio: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var interests: UILabel!
     
     override func viewDidLoad() {
-        menu=1;
         super.viewDidLoad()
+        FriendTable.delegate = self
+        FriendTable.dataSource = self
+        self.FriendTable.backgroundColor = UIColor.black
         self.ref.child("Users").child(self.userID!).observe(.value, with: { (snapshot) in
             let snapshot = snapshot.value as! [String: AnyObject]
             self.username.text=snapshot["Username"] as! String
             //initially the user will not have a bio data
             if(snapshot["Bio"] !== nil)
-            {
-            self.bio.text = snapshot["Bio"] as? String
-            }
-            
+            {self.bio.text = snapshot["Bio"] as? String}
             if(snapshot["Interests"] !== nil)
-            {
-            self.interests.text = snapshot["Interests"] as? String
-            }
-            
+            {self.interests.text = snapshot["Interests"] as? String}
             if(snapshot["Pic"] !== nil)
             {
-                // print()
                 let databaseProfilePic = snapshot["Pic"] as! String
                 let url=URL(string:databaseProfilePic)
-                self.profilePicture.setImageWith(url!)
-                //let data = try? Data(contentsOf: URL(string: databaseProfilePic)!)
-                //self.setProfilePicture(self.profilePicture,imageToSet:UIImage(data:data!)!)
-            }
-        })
-      /*  let nip = UINib(nibName: "FriendTableViewCell", bundle: nil)
-        FriendTable.register(nip, forCellReuseIdentifier: "cell")
-        FriendTable.delegate = self
-        FriendTable.dataSource = self
-        self.FriendTable.backgroundColor = UIColor.black
-        // Do any additional setup after loading the view.
+                self.profilePicture.setImageWith(url!)}})
+         ///////////follwoers list/////////
         dbHandle = ref?.child("Followers/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]
-            {self.Followers=data
-                // var i:Int=0;
-            }})
+            { var user=NSDictionary()
+                for (_,value) in data{
+                user=value as! NSDictionary
+                self.Followers.append(user)}}})
+        /////////follwoing list//////////////////
         dbHandle2 = ref?.child("Following/Users/\(userID!)").observe(.value, with: { (snapshot) in
             if let data = snapshot.value as? [String:Any]
-            {self.Following=data
-                // var i:Int=0;
+            {
+                for (_,value) in data{
+                    if let user=value as? NSDictionary{
+                        self.Following.append(user)}}
             }})
-        */
+        
     }
-    
-  
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-      //   Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.async{
+            self.FriendTable.reloadData()}
     }
-    
+
     /////////////////SegmentPage/////////////
-  /*  @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
-        menu=sender.selectedSegmentIndex
-        print(menu,"ssddww!!")
-        FriendTable.reloadData()
+    @IBAction func SwitchSegment(_ sender: UISegmentedControl) {
+       DispatchQueue.main.async{
+        self.FriendTable.reloadData()}
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
- //   if menu==0{return Followers.count}
-   //    else{return Following.count}
-   return 0
+        switch(segmentControl.selectedSegmentIndex){
+        case 0: return Followers.count
+        case 1: return Following.count
+        default: return 0
+        }
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:FriendTableViewCell=FriendTable.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! FriendTableViewCell
-      if menu==0{
-        cell.id=""
-        }
-      else{}
+        let cell:FriendTableViewCell=FriendTable.dequeueReusableCell(withIdentifier:"cell1", for: indexPath) as! FriendTableViewCell
+        switch (segmentControl.selectedSegmentIndex) {
+        case 0:
+            let user=self.Followers[indexPath.row]
+            cell.UserNameLable.text=user["Username"] as! String
+            cell.index=indexPath.row
+            if let pic=user["Pic"] as? String{
+                let url=URL(string:pic)
+                cell.UserImg.setImageWith(url!)
+            }
+            break
+        case 1:
+            let user=self.Following[indexPath.row]
+            cell.UserNameLable.text=user["Username"] as! String
+            cell.index=indexPath.row
+            if let pic=user["Pic"] as? String{
+                let url=URL(string:pic)
+                cell.UserImg.setImageWith(url!)
+            }
+            break
+        default: return cell}
         return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //    let cell = tableView.cellForRow(at: indexPath) as! FriendTableViewCell
-      //  self.profileID=cell.id
-        //performSegue(withIdentifier:"profile", sender: (Any).self)
+        
     }
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier=="profile"){
+            let cell=sender as! FriendTableViewCell
      let profile=segue.destination as! ProfilePageViewController
-     profile.CurrentUserID=self.profileID
-     }*/
-    
-    
-    internal func setProfilePicture(imageView: UIImageView, imageToSet: UIImage){}
+            switch(segmentControl.selectedSegmentIndex){
+            case 0:
+                let user=self.Followers[cell.index]
+                profile.WantedUser=user
+                break
+            case 1:
+                //let cell=sender as! FriendTableViewCell
+                let user=self.Following[cell.index]
+                profile.WantedUser=user
+                break
+            default:print("!!!")}
+            }
+     }
 }
 
 
