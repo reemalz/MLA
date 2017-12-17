@@ -87,8 +87,10 @@ class ProfilePageViewController: UIViewController , UITableViewDelegate,UITableV
     }
     
     @IBAction func action(_ sender: UIButton) {
+        print(self.WantedUser["Fnum"]," @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         let CurrentUID=self.CurrentUser["UID"] as! String
         if(self.Followbtn.titleLabel?.text=="Follow"){
+ self.ref.child("UID").child(userID).child("\(self.WantedUser["Fnum"])").setValue(3)
             self.ref.child("Following").child("Users").child(CurrentUID).child(userID).setValue(self.WantedUser)
             self.ref.child("Followers").child("Users").child(userID).child(CurrentUID).setValue(self.CurrentUser)
             self.Followbtn.backgroundColor=UIColor.lightGray
