@@ -8,10 +8,10 @@
 
 import UIKit
 import Firebase
+import Foundation
+
 class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate,UISearchResultsUpdating,UISearchBarDelegate{
-    
-    
-    
+    let imageURL:String="https://image.tmdb.org/t/p/w500"
     @IBOutlet weak var Header: UINavigationItem!
     @IBOutlet var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
@@ -22,10 +22,13 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
     var filteredUsers=[String:Any]()
     var usersArrayN=[NSDictionary?]()
     var filteredUsersN=[NSDictionary?]()
+    var Movieresults=[NSDictionary?]()
     var id = Int()
+    let movie = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&query")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateSearchResultsAPI( movie: movie!)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
@@ -34,7 +37,6 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
         self.tableView.register(UITableViewCell.self , forCellReuseIdentifier: "recell")
         tableView.delegate = self
         tableView.dataSource = self
-        
         //set database ref
         ref = Database.database().reference()
         dbHandle = ref?.child("Users").queryOrdered(byChild: "Username").observe(.value, with: { (snapshot) in
@@ -54,98 +56,98 @@ class SearchViewController: UIViewController ,UITableViewDataSource,UITableViewD
                 var user=value as! NSDictionary
                 self.filteredUsersN.append(user)
             }})
-        
     }
     
     
     
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    func numberOfSections(in tableView: UITableView) -> Int {return 1}
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != ""{
-            return filteredUsersN.count
+            return self.Movieresults.count
         }
-        else{
-            return self.usersArrayN.count}
+        else{return self.usersArrayN.count}
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! SearchTableViewCell
         let user : NSDictionary?
-        
+
         if searchController.isActive && searchController.searchBar.text != ""{
-            
-            user = filteredUsersN[indexPath.row]
+            user = self.Movieresults[indexPath.row]
+
         }
         else
         {
             user = self.usersArrayN[indexPath.row]
         }
         
+        cell.Title?.text = user?["original_title"] as? String
         
-        cell.Title?.text = user?["Username"] as? String
-        cell.details?.text = user?["Email"] as? String
-        if let pic=user?["Pic"] as? String{
-            let url=URL(string:pic)
-            cell.Pic?.setImageWith(url!)}
+        if let pic=user!["poster_path"] as? String{
+        let url=URL(string:imageURL+pic)
+            cell.Pic.setImageWith(url!)}
+        cell.index=indexPath.row
+        let tag=user!["id"] as! Int
+            cell.id=tag
         return(cell)
+        
+        
+        //    cell.Title?.text = user?["Username"] as? String
+        //   cell.details?.text = user?["Email"] as? String
     }
     
     
     
     func updateSearchResults(for searchController: UISearchController) {
-        var i:Int=0
-        if searchController.searchBar.text == "" {
-            filteredUsers=usersArray
-            filteredUsersN=usersArrayN
-            self.tableView.reloadData()
-        } else {
-            self.filteredUsers = self.usersArray.filter{ user in
-                let username = usersArrayN[i]!["Username"] as! String
-                i = 1+i
-                return(username.lowercased().contains(searchController.searchBar.text!.lowercased()))
-            }
-            filteredUsersN=[NSDictionary]()
-            for (key,value) in filteredUsers{
-                var user=value as! NSDictionary
-                filteredUsersN.append(user)
-                
-            }
-            self.tableView.reloadData()
+        
+        if searchController.searchBar.text != "" {
+            let search = (searchController.searchBar.text!.lowercased()).replacingOccurrences(of: " ", with: "+") as String
+            updateSearchResultsAPI( movie: URL(string: "https://api.themoviedb.org/3/search/movie?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&query=\(search)")!
+            )
+    //        self.tableView.reloadData()
         }
-        }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // let cell=tableView.cellForRow(at:indexPath) as! SearchTableViewCell
-        let user = filteredUsersN[indexPath.row]
-        if( (user!["UID"] as! String) == (userID!)){
-            performSegue(withIdentifier:"tab", sender:SearchTableViewCell())
-        }
-        else {
-            self.id = indexPath.row
-            performSegue(withIdentifier:"profile", sender:SearchTableViewCell())}
+        
+ 
+ }
+    
+    func updateSearchResultsAPI(movie: URL) {
+        let task = URLSession.shared.dataTask(with: movie){ data,respons,error in
+            if error != nil
+            {print ("ERROR")}
+            else{
+                self.Movieresults=[NSDictionary]()
+                if let content = data{
+                    do
+                    { let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                        if let movies=myJson["results"] as? [NSDictionary]
+                        {self.Movieresults = movies
+                                  DispatchQueue.main.async {
+                                     self.tableView.reloadData()}
+                        }}
+                    catch{}
+                    
+                }}}
+        task.resume()
     }
     
+    
+  //////////////////////////////////////// go to movie page ///////////////////////////////////
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            performSegue(withIdentifier:"chosenMovie", sender:SearchTableViewCell())
+        }
+    
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                if segue.identifier=="tab"{
-                    let tabbarController = segue.destination as! UITabBarController
-                    tabbarController.selectedIndex = 3
-                    
- //                   let vc = self.storyboard?.instantiateViewController(withIdentifier: "tab")
-   //                  self.present(vc!, animated: true, completion: nil)
-                    
-                }
-                else if segue.identifier=="profile"{
-                    let user = self.usersArrayN[self.id]
-                let controller = segue.destination as! ProfilePageViewController
-                    controller.WantedUser = user!}
-                
+                if segue.identifier=="chosenMovie"{
+                    let page=segue.destination as! MoviePageViewController
+                    let cell=sender as! SearchTableViewCell
+                    let object = self.Movieresults[cell.index]
+                    page.id=object!["id"] as! Int}
         
-        
-    }
+        }
 }
 
 

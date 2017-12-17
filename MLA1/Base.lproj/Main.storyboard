@@ -1169,7 +1169,7 @@
                                     <segment title="Followers"/>
                                     <segment title="Following"/>
                                 </segments>
-                                <color key="tintColor" red="0.06241830438375473" green="0.64072883129119873" blue="0.62210971117019653" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.15016388893127441" green="0.54819774627685547" blue="0.64064770936965942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="SwitchSegment:" destination="kQX-sq-OT7" eventType="valueChanged" id="1Zp-36-qEv"/>
                                 </connections>
@@ -1461,7 +1461,7 @@
                                     <segment title="Followers"/>
                                     <segment title="Following"/>
                                 </segments>
-                                <color key="tintColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.15016388893127441" green="0.54819774627685547" blue="0.64064770936965942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="SwitchSegment:" destination="IUt-33-HJW" eventType="valueChanged" id="8kn-uP-QTk"/>
                                     <action selector="SwitchSegment:" destination="kQX-sq-OT7" eventType="valueChanged" id="z5k-rf-LEe"/>
@@ -1489,7 +1489,7 @@
         <scene sceneID="0Ao-ug-MOt">
             <objects>
                 <tableViewController id="f5L-9R-fBh" customClass="SearchViewController" customModule="MLA1" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="CEv-UQ-1Pw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" id="CEv-UQ-1Pw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1499,31 +1499,24 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.063013531267642975" green="0.050860710442066193" blue="0.054904855787754059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="zHe-OU-J93" customClass="SearchTableViewCell" customModule="MLA1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zHe-OU-J93" id="uJW-wJ-R10">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAT-hg-ZdP">
-                                            <rect key="frame" x="98" y="53" width="238" height="21"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yu-2D-paE">
+                                            <rect key="frame" x="25" y="21" width="51" height="56"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0018558051670000001" green="0.56960707899999996" blue="0.57558363680000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBT-TA-SAL">
-                                            <rect key="frame" x="98" y="18" width="70" height="34"/>
+                                            <rect key="frame" x="98" y="32" width="238" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                             <color key="textColor" red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="7yu-2D-paE">
-                                            <rect key="frame" x="25" y="21" width="51" height="56"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
@@ -1531,7 +1524,7 @@
                                 <connections>
                                     <outlet property="Pic" destination="7yu-2D-paE" id="mfi-IZ-ceB"/>
                                     <outlet property="Title" destination="cBT-TA-SAL" id="1gY-kP-LMT"/>
-                                    <outlet property="details" destination="wAT-hg-ZdP" id="0ho-oj-noX"/>
+                                    <segue destination="2Ex-90-Qkx" kind="modal" identifier="chosenMovie" id="pnZ-N1-24u"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1547,13 +1540,11 @@
                     <connections>
                         <outlet property="Header" destination="MV6-rX-g9S" id="VOe-Fe-eTb"/>
                         <outlet property="tableView" destination="CEv-UQ-1Pw" id="r32-aX-2hN"/>
-                        <segue destination="CQq-vS-IYz" kind="modal" identifier="tab" id="9di-ln-8nz"/>
-                        <segue destination="IUt-33-HJW" kind="modal" identifier="profile" id="pqh-9t-LoT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7v-Ru-otC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-450" y="3092"/>
+            <point key="canvasLocation" x="-450.5" y="3091.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QuF-rn-oMa">
@@ -1765,9 +1756,9 @@
         <image name="user" width="75" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HFn-ue-CGc"/>
-        <segue reference="DfZ-iX-GS8"/>
-        <segue reference="Lf0-Zt-NEq"/>
+        <segue reference="Op4-wf-P9G"/>
+        <segue reference="7Mi-w5-RtN"/>
+        <segue reference="rob-wU-RGe"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.078790493309497833" green="0.062608294188976288" blue="0.066617421805858612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

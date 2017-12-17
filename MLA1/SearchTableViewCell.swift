@@ -14,5 +14,7 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var Pic: UIImageView!
+    var id=Int()
+    var index=Int()
     
 }
