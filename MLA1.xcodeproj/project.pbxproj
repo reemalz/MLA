@@ -10,6 +10,8 @@
 		0F8BC1BF1FA8775D004B696D /* MoviePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1BE1FA8775D004B696D /* MoviePageViewController.swift */; };
 		0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */; };
 		6105BE021F93C0D000F6EDC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */; };
+		610FFEF41FE69A3600B356C3 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FFEF31FE69A3500B356C3 /* ReviewViewController.swift */; };
+		610FFEF61FE69A4200B356C3 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FFEF51FE69A4100B356C3 /* ReviewTableViewCell.swift */; };
 		611A7E441FD5CEAD007EE94C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A7E431FD5CEAD007EE94C /* EditProfileViewController.swift */; };
 		61A2E4221FE67B1000005C22 /* SearchCoustmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A2E4211FE67B1000005C22 /* SearchCoustmerViewController.swift */; };
 		61AE0A851FD1177200F59FF0 /* Top20CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AE0A841FD1177200F59FF0 /* Top20CollectionCell.swift */; };
@@ -45,6 +47,8 @@
 		0F8BC1C01FA889C0004B696D /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		297F3118F12E4CF987D49C68 /* Pods-MLA1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLA1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLA1/Pods-MLA1.debug.xcconfig"; sourceTree = "<group>"; };
 		6105BE011F93C0D000F6EDC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		610FFEF31FE69A3500B356C3 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		610FFEF51FE69A4100B356C3 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		611A7E431FD5CEAD007EE94C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		61A2E4211FE67B1000005C22 /* SearchCoustmerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoustmerViewController.swift; sourceTree = "<group>"; };
 		61AE0A841FD1177200F59FF0 /* Top20CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top20CollectionCell.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				61AE0A841FD1177200F59FF0 /* Top20CollectionCell.swift */,
 				61AE0A861FD117DA00F59FF0 /* Top20ViewController.swift */,
 				61C60F3B1FC322F90004AC6A /* SearchViewController.swift */,
+				610FFEF31FE69A3500B356C3 /* ReviewViewController.swift */,
+				610FFEF51FE69A4100B356C3 /* ReviewTableViewCell.swift */,
 				E3B9A1981FBF728D00DBB85E /* ProfilePageViewController.swift */,
 				E3B9A19A1FBF72A500DBB85E /* CurrentProfilePageViewController.swift */,
 				61CA198E1F9151B8007C1509 /* Main.storyboard */,
@@ -312,6 +318,7 @@
 				E39FD9DB1FAFC8C30095AD57 /* CollectionViewCell7.swift in Sources */,
 				E3FE4D041F9BF0B000B5F7B9 /* CollectionViewCell4.swift in Sources */,
 				61CA198D1F9151B8007C1509 /* ViewController.swift in Sources */,
+				610FFEF61FE69A4200B356C3 /* ReviewTableViewCell.swift in Sources */,
 				0F8BC1C11FA889C0004B696D /* WatchListViewController.swift in Sources */,
 				61CA198B1F9151B8007C1509 /* AppDelegate.swift in Sources */,
 				E3FE4D061F9BF0C500B5F7B9 /* CollectionViewCell5.swift in Sources */,
@@ -333,6 +340,7 @@
 				E3B9A19B1FBF72A600DBB85E /* CurrentProfilePageViewController.swift in Sources */,
 				611A7E441FD5CEAD007EE94C /* EditProfileViewController.swift in Sources */,
 				87981A681F97D9BC0002D94A /* LoginViewController.swift in Sources */,
+				610FFEF41FE69A3600B356C3 /* ReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
